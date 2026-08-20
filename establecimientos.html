@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Buscar establecimientos | Activa</title>
+<meta name="description" content="Explora la red de establecimientos y sucursales disponibles con tu membresía Activa: cine, museos, parques, boliche y más." />
+<link rel="icon" href="assets/img/brand/activa-symbol.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html#hero" class="brand">
+      <img src="assets/img/brand/activa-symbol.png" alt="" />
+      activa
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#como-funciona">Cómo funciona</a>
+      <a href="establecimientos.html" class="active-link">Buscar establecimientos</a>
+      <a href="para-empresas.html">Para empresas</a>
+      <a href="para-colaboradores.html">Para colaboradores</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+      <a href="index.html#planes">Planes</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="index.html#planes" class="btn btn-ghost btn-sm">Ver planes</a>
+      <a href="index.html#cta-final" class="btn btn-primary btn-sm">Agendar demo</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-sheet" id="mobileSheet">
+  <a href="index.html#como-funciona">Cómo funciona</a>
+  <a href="establecimientos.html">Buscar establecimientos</a>
+  <a href="para-empresas.html">Para empresas</a>
+  <a href="para-colaboradores.html">Para colaboradores</a>
+  <a href="quienes-somos.html">Quiénes somos</a>
+  <a href="index.html#planes">Planes</a>
+  <a href="index.html#cta-final" class="btn btn-primary">Agendar demo</a>
+</div>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero wide">
+  <div class="container">
+    <a href="index.html#hero" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver al inicio
+    </a>
+    <span class="eyebrow">Red Activa</span>
+    <h1>Descubre qué puedes usar con tu membresía.</h1>
+    <p class="lead">Cine, museos, parques, boliche y experiencias — busca por nombre, categoría o zona antes de contratar o de activar tu plan. El catálogo crece cada trimestre.</p>
+  </div>
+</section>
+
+<!-- ============ CATÁLOGO ============ -->
+<section class="content-section">
+  <div class="container">
+
+    <div class="search-toolbar">
+      <div class="search-toolbar-fields">
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Busca por nombre, sucursal o zona..." />
+        </div>
+        <select id="categoriaFilter" class="filter-select">
+          <option value="">Todas las categorías</option>
+        </select>
+        <select id="zonaFilter" class="filter-select">
+          <option value="">Todas las zonas</option>
+        </select>
+      </div>
+      <div class="view-toggle" role="tablist" aria-label="Vista del catálogo">
+        <button type="button" class="active" data-view="lista">Lista</button>
+        <button type="button" data-view="map">Mapa</button>
+      </div>
+    </div>
+
+    <p class="results-count" id="resultsCount">Cargando catálogo…</p>
+
+    <div class="establecimientos-grid" id="establecimientosGrid"></div>
+    <p class="no-results" id="noResults" style="display:none">No encontramos establecimientos con esos filtros. Prueba con otra búsqueda.</p>
+
+    <div class="map-view" id="mapView">
+      <div id="establecimientos-map"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="cta-final">
+  <div class="container">
+    <div class="cta-final-panel" data-reveal>
+      <h2>¿Tu empresa todavía no tiene Activa?</h2>
+      <p>Agenda una demo y lleva esta red de experiencias a todo tu equipo.</p>
+      <div class="cta-final-actions">
+        <a href="para-empresas.html" class="btn btn-primary btn-lg">Obtener una cotización</a>
+        <a href="index.html#planes" class="btn btn-ghost btn-lg">Ver planes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html#hero" class="brand">
+          <img src="assets/img/brand/activa-symbol.png" alt="" />
+          activa
+        </a>
+        <p>El beneficio de entretenimiento corporativo que tu equipo realmente activa. Cine, museos, parques y experiencias en una sola membresía.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+          <li><a href="establecimientos.html">Buscar establecimientos</a></li>
+          <li><a href="index.html#planes">Planes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresas</h4>
+        <ul>
+          <li><a href="para-empresas.html">Para empresas</a></li>
+          <li><a href="para-colaboradores.html">Para colaboradores</a></li>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:bernardo@activabeneficios.com">bernardo@activabeneficios.com</a></li>
+          <li><a href="#">Aviso de privacidad</a></li>
+          <li><a href="#">Términos de uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Activa. Todos los derechos reservados.</span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 0 1 5 0V17"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/establecimientos.js"></script>
+</body>
+</html>
