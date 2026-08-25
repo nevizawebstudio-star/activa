@@ -478,6 +478,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   animation: scroll-x 32s linear infinite;
   flex: none;
   padding-inline: var(--sp-5);
+  padding-block: var(--sp-3);
   will-change: transform;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
