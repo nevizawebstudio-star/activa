@@ -61,11 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const sucursalesHtml = item.sucursales.map(s => `
       <div class="establecimiento-sucursal">
         ${svgPin}
-        <span>${s.nombre} — ${s.zona}, ${s.ciudad}</span>
+        <span>${s.nombre} · ${s.zona}, ${s.ciudad}</span>
       </div>
     `).join('');
+    const tokensHtml = typeof item.tokens === 'number'
+      ? `<span class="establecimiento-tokens">Valor: ${item.tokens} tokens</span>`
+      : '';
     return `
       <article class="establecimiento-card">
+        ${tokensHtml}
         <div class="establecimiento-head">
           <div class="establecimiento-logo"><img src="${item.logo}" alt="${item.nombre}" loading="lazy" /></div>
           <div>

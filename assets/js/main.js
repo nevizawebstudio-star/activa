@@ -34,35 +34,79 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---- Panel de empresas: widget con vistas (Uso / Facturación) ---- */
-  const empresasViews = {
-    uso: [
-      { value: '6', label: 'Convenios activos hoy, creciendo cada trimestre' },
-      { value: '1', label: 'Panel de administración para todo el equipo' },
-      { value: '0', label: 'Procesos manuales de vouchers o reembolsos' },
-      { value: '24h', label: 'Tiempo promedio de activación por colaborador' },
-    ],
-    facturacion: [
-      { value: '1', label: 'Factura mensual consolidada por empresa' },
-      { value: '100%', label: 'Gasto visible por colaborador y por área' },
-      { value: '0', label: 'Reembolsos o comprobantes por revisar' },
-      { value: 'Detallado', label: 'Reporte de uso descargable cada mes' },
-    ],
-  };
-  const empresasTabs = document.querySelectorAll('.empresas-card-tabs button');
-  const empresasGrid = document.querySelector('.empresas-metric-grid');
-  if (empresasTabs.length && empresasGrid) {
-    const metricEls = empresasGrid.querySelectorAll('.empresas-metric');
-    empresasTabs.forEach((tab, i) => {
-      const key = i === 0 ? 'uso' : 'facturacion';
-      tab.addEventListener('click', () => {
-        empresasTabs.forEach(t => t.classList.toggle('active', t === tab));
-        empresasViews[key].forEach((metric, idx) => {
-          const el = metricEls[idx];
-          if (!el) return;
-          el.querySelector('b').textContent = metric.value;
-          el.querySelector('span').textContent = metric.label;
-        });
+  /* ---- Login dropdown (Soy colaborador / Soy empresa) ---- */
+  const loginTrigger = document.getElementById('loginTrigger');
+  const loginMenu = document.getElementById('loginMenu');
+  let closeLoginMenu = () => {};
+  if (loginTrigger && loginMenu) {
+    closeLoginMenu = () => {
+      loginMenu.classList.remove('open');
+      loginTrigger.setAttribute('aria-expanded', 'false');
+    };
+    const toggleLoginMenu = () => {
+      const isOpen = loginMenu.classList.toggle('open');
+      loginTrigger.setAttribute('aria-expanded', String(isOpen));
+    };
+    loginTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleLoginMenu();
+    });
+    document.addEventListener('click', (e) => {
+      if (!loginMenu.contains(e.target) && e.target !== loginTrigger) closeLoginMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLoginMenu();
+    });
+  }
+
+  /* ---- Login modal: "Soy colaborador" / "Soy empresa" abren el mismo pop up de login (aún no activo) ---- */
+  const loginModal = document.getElementById('loginModal');
+  if (loginModal) {
+    const openModalTriggers = document.querySelectorAll('[data-open-login-modal]');
+    const closeModalTriggers = loginModal.querySelectorAll('[data-modal-close]');
+
+    const openLoginModal = () => {
+      loginModal.classList.add('open');
+      loginModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      closeLoginMenu();
+      if (mobileSheet) mobileSheet.classList.remove('open');
+    };
+    const closeLoginModal = () => {
+      loginModal.classList.remove('open');
+      loginModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    };
+
+    openModalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLoginModal();
+      });
+    });
+    closeModalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', closeLoginModal);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && loginModal.classList.contains('open')) closeLoginModal();
+    });
+
+    const modalLoginForm = document.getElementById('modalLoginForm');
+    if (modalLoginForm) {
+      modalLoginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+      });
+    }
+  }
+
+  /* ---- Marquee de establecimientos: selección al hacer clic ---- */
+  const marqueeChips = document.querySelectorAll('.marquee-chip');
+  if (marqueeChips.length) {
+    marqueeChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const alreadySelected = chip.classList.contains('is-selected');
+        marqueeChips.forEach(c => c.classList.remove('is-selected'));
+        if (!alreadySelected) chip.classList.add('is-selected');
       });
     });
   }

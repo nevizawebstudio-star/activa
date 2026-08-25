@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
@@ -20,17 +21,28 @@
       <img src="assets/img/brand/activa-symbol.png" alt="" />
       activa
     </a>
-    <nav class="nav-links">
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="establecimientos.html">Buscar establecimientos</a>
-      <a href="para-empresas.html">Para empresas</a>
-      <a href="para-colaboradores.html">Para colaboradores</a>
-      <a href="quienes-somos.html">Quiénes somos</a>
-      <a href="#planes">Planes</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="#planes" class="btn btn-ghost btn-sm">Ver planes</a>
-      <a href="#cta-final" class="btn btn-primary btn-sm">Agendar demo</a>
+    <div class="nav-pill">
+      <nav class="nav-links">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#establecimientos">Buscar establecimientos</a>
+        <a href="#planes">Planes</a>
+        <a href="para-empresas.html" target="_blank" rel="noopener">Para empresas</a>
+        <a href="para-colaboradores.html" target="_blank" rel="noopener">Para colaboradores</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="nav-login">
+          <button type="button" class="btn btn-ghost btn-sm" id="loginTrigger" aria-haspopup="true" aria-expanded="false">
+            Iniciar sesión
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="nav-login-menu" id="loginMenu">
+            <a href="para-colaboradores.html#iniciar-sesion" data-open-login-modal>Soy colaborador</a>
+            <a href="para-empresas.html#cotizar" data-open-login-modal>Soy empresa</a>
+          </div>
+        </div>
+        <a href="#cta-final" class="btn btn-primary btn-sm">Agendar demo</a>
+      </div>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -40,12 +52,41 @@
 
 <div class="mobile-sheet" id="mobileSheet">
   <a href="#como-funciona">Cómo funciona</a>
-  <a href="establecimientos.html">Buscar establecimientos</a>
-  <a href="para-empresas.html">Para empresas</a>
-  <a href="para-colaboradores.html">Para colaboradores</a>
-  <a href="quienes-somos.html">Quiénes somos</a>
+  <a href="#establecimientos">Buscar establecimientos</a>
   <a href="#planes">Planes</a>
+  <a href="para-empresas.html" target="_blank" rel="noopener">Para empresas</a>
+  <a href="para-colaboradores.html" target="_blank" rel="noopener">Para colaboradores</a>
+  <a href="#quienes-somos">Quiénes somos</a>
+  <a href="para-colaboradores.html#iniciar-sesion" data-open-login-modal>Soy colaborador</a>
+  <a href="para-empresas.html#cotizar" data-open-login-modal>Soy empresa</a>
   <a href="#cta-final" class="btn btn-primary">Agendar demo</a>
+</div>
+
+<!-- ============ LOGIN MODAL (Soy colaborador / Soy empresa) ============ -->
+<div class="login-modal" id="loginModal" aria-hidden="true">
+  <div class="login-modal-backdrop" data-modal-close></div>
+  <div class="login-modal-panel login-box" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+    <button type="button" class="login-modal-close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="lock-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+    </div>
+    <h3 id="loginModalTitle">Iniciar sesión</h3>
+    <p>Usa el correo con el que tu empresa te dio de alta en Activa.</p>
+    <form id="modalLoginForm">
+      <div class="form-field">
+        <label for="modalLoginCorreo">Correo de empresa</label>
+        <input type="email" id="modalLoginCorreo" placeholder="tu.nombre@empresa.com" required />
+      </div>
+      <div class="form-field">
+        <label for="modalLoginPass">Contraseña</label>
+        <input type="password" id="modalLoginPass" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+    <p class="login-note">El login todavía no está activo. Muy pronto podrás entrar con tu correo de empresa.</p>
+  </div>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -60,7 +101,7 @@
       <h1 class="hero-headline">El beneficio<br /><span class="accent">que sí se usa.</span></h1>
 
       <div class="audience-panel active" data-panel="empresas">
-        <p class="hero-lead">Activa convierte una prestación de empresa en un plan que tu equipo realmente quiere usar: cine, parques, museos y experiencias, todo dentro de una sola membresía mensual.</p>
+        <p class="hero-lead">Dile adiós a los cupones. Activa convierte los beneficios empresariales en planes que todo tu equipo realmente quiera usar. Desde boletos de cine, entradas a parques de atracción, museos y una gran variedad de experiencias sociales y culturales; todo dentro de una membresía mensual.</p>
         <div class="hero-actions">
           <a href="#cta-final" class="btn btn-primary btn-lg">Agendar demo</a>
           <a href="#planes" class="btn btn-ghost btn-lg">Ver precio por colaborador</a>
@@ -73,14 +114,12 @@
           <a href="#" class="btn btn-primary btn-lg">
             Descargar la app
           </a>
-          <a href="establecimientos.html" class="btn btn-ghost btn-lg">Ver convenios</a>
+          <a href="#establecimientos" class="btn btn-ghost btn-lg">Ver convenios</a>
         </div>
       </div>
 
       <div class="hero-stats">
-        <div class="stat"><b>6</b><span>Convenios activos</span></div>
-        <div class="stat"><b>1</b><span>Membresía mensual</span></div>
-        <div class="stat"><b>0</b><span>Vouchers ni trámites</span></div>
+        <div class="stat"><b>+6</b><span>Establecimientos disponibles</span></div>
       </div>
     </div>
 
@@ -129,115 +168,88 @@
   <div class="container">
     <div class="section-head center" data-reveal>
       <span class="eyebrow">Cómo funciona</span>
-      <h2>Activar el plan toma cuatro pasos.</h2>
-      <p>Olvídate de investigar convenios por tu cuenta o de perder vouchers en el correo: todo tu entretenimiento vive en una sola app.</p>
+      <p>Olvídate de investigar convenios por tu cuenta y de perder vouchers en tu correo; todo tu entretenimiento vive en un solo lugar.</p>
     </div>
 
     <div class="steps">
       <div class="step-card" data-reveal>
-        <div class="step-num">01</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="9" height="18" rx="1"/><rect x="13" y="9" width="7" height="12" rx="1"/><path d="M7.5 7h1M7.5 11h1M7.5 15h1M16 13h1M16 17h1"/></svg>
+        <div class="step-top">
+          <span class="step-num">01</span>
+          <span class="step-logo" aria-hidden="true"></span>
         </div>
-        <h3>Tu empresa activa el beneficio</h3>
-        <p>RH suma Activa a las prestaciones del equipo en un solo trámite, sin curva de aprendizaje.</p>
+        <h3>Tu empresa adquiere el beneficio</h3>
+        <p>Tu empresa suma a Activa dentro de su plan de beneficios en un solo trámite.</p>
       </div>
 
       <div class="step-card" data-reveal>
-        <div class="step-num">02</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 18h7M18 18h2"/><path d="M4 12h16"/><circle cx="17" cy="6" r="2"/><circle cx="9" cy="18" r="2"/></svg>
+        <div class="step-top">
+          <span class="step-num">02</span>
+          <span class="step-logo" aria-hidden="true"></span>
         </div>
         <h3>Eliges tu plan</h3>
-        <p>Cada colaborador activa su cuenta y elige el plan que mejor se ajusta a su ritmo.</p>
+        <p>Cada colaborador comienza con una red de beneficios que puede expandir a otros planes que se ajusten a su ritmo.</p>
       </div>
 
       <div class="step-card" data-reveal>
-        <div class="step-num">03</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><rect x="9.3" y="5.5" width="2" height="2"/><rect x="12.7" y="5.5" width="2" height="2"/><rect x="9.3" y="9" width="2" height="2"/><path d="M12 17.2h.01"/></svg>
+        <div class="step-top">
+          <span class="step-num">03</span>
+          <span class="step-logo" aria-hidden="true"></span>
         </div>
-        <h3>Reservas o presentas tu credencial</h3>
-        <p>Desde la app reserva tu boliche, compra tus entradas de cine o agenda tu día en Six Flags, en minutos.</p>
+        <h3>Seleccionas y reservas</h3>
+        <p>Reserva tu experiencia desde tu cuenta en segundos.</p>
       </div>
 
       <div class="step-card" data-reveal>
-        <div class="step-num">04</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C10.5 2 12 7 12 7Z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13.5 2 12 7 12 7Z"/></svg>
+        <div class="step-top">
+          <span class="step-num">04</span>
+          <span class="step-logo" aria-hidden="true"></span>
         </div>
-        <h3>Disfrutas el plan</h3>
-        <p>Sin vouchers que imprimir ni letras chiquitas que leer. Solo lo usas y ya.</p>
+        <h3>Disfruta tu beneficio</h3>
+        <p>Sin vouchers que imprimir ni letras chiquitas que leer.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONVENIOS ============ -->
-<section class="convenios" id="convenios">
+<!-- ============ BUSCAR ESTABLECIMIENTOS ============ -->
+<section class="content-section" id="establecimientos">
   <div class="container">
-    <div class="convenios-head" data-reveal>
-      <div class="section-head" style="margin-bottom:0">
-        <span class="eyebrow">Convenios</span>
-        <h2>Seis experiencias, una membresía.</h2>
-        <p>De la sala de cine al parque de diversiones, todo dentro del mismo plan.</p>
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Buscar establecimientos</span>
+      <h2>Descubre qué puedes usar con tu membresía.</h2>
+      <p>Cine, museos, parques, boliche y muchas experiencias más. Filtra por nombre, categoría o zona para encontrar tu experiencia.</p>
+    </div>
+
+    <div class="search-toolbar">
+      <div class="search-toolbar-fields">
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="searchInput" class="search-input" placeholder="Busca por nombre, sucursal o zona..." />
+        </div>
+        <select id="categoriaFilter" class="filter-select">
+          <option value="">Todas las categorías</option>
+        </select>
+        <select id="zonaFilter" class="filter-select">
+          <option value="">Todas las zonas</option>
+        </select>
+      </div>
+      <div class="view-toggle" role="tablist" aria-label="Vista del catálogo">
+        <button type="button" class="active" data-view="lista">Lista</button>
+        <button type="button" data-view="map">Mapa</button>
       </div>
     </div>
 
-    <div class="venues-grid" data-reveal>
-      <article class="venue-card">
-        <div class="venue-media"><div class="venue-logo-tile"><img src="assets/img/logos-convenios/cinemex.jpg" alt="Cinemex" /></div></div>
-        <div class="venue-body">
-          <span class="venue-tag">Cine</span>
-          <h3>Cinemex</h3>
-          <p>La cadena de cines más grande de México, con salas IMAX, 4DX y Dolby en cientos de complejos.</p>
-        </div>
-      </article>
+    <p class="results-count" id="resultsCount">Cargando catálogo…</p>
 
-      <article class="venue-card">
-        <div class="venue-media"><div class="venue-logo-tile"><img src="assets/img/logos-convenios/museo-memoria-tolerancia.jpg" alt="Museo Memoria y Tolerancia" /></div></div>
-        <div class="venue-body">
-          <span class="venue-tag">Museo</span>
-          <h3>Museo Memoria y Tolerancia</h3>
-          <p>Museo en el Centro Histórico dedicado a la memoria, los genocidios y los derechos humanos, junto a la Alameda Central.</p>
-        </div>
-      </article>
+    <div class="establecimientos-grid" id="establecimientosGrid"></div>
+    <p class="no-results" id="noResults" style="display:none">No encontramos establecimientos con esos filtros. Prueba con otra búsqueda.</p>
 
-      <article class="venue-card">
-        <div class="venue-media"><div class="venue-logo-tile"><img src="assets/img/logos-convenios/acuario-inbursa.jpg" alt="Acuario Inbursa" /></div></div>
-        <div class="venue-body">
-          <span class="venue-tag">Acuario</span>
-          <h3>Acuario Inbursa</h3>
-          <p>Uno de los acuarios más grandes de México, con más de 200 especies en Plaza Carso, Polanco.</p>
-        </div>
-      </article>
+    <div class="map-view" id="mapView">
+      <div id="establecimientos-map"></div>
+    </div>
 
-      <article class="venue-card">
-        <div class="venue-media"><div class="venue-logo-tile"><img src="assets/img/logos-convenios/bowlero.jpg" alt="Bowlero" /></div></div>
-        <div class="venue-body">
-          <span class="venue-tag">Boliche</span>
-          <h3>Bowlero</h3>
-          <p>La cadena de boliche más grande del mundo, con pistas, arcade y buen ambiente para el equipo.</p>
-        </div>
-      </article>
-
-      <article class="venue-card">
-        <div class="venue-media"><div class="venue-logo-tile"><img src="assets/img/logos-convenios/six-flags.jpg" alt="Six Flags México" /></div></div>
-        <div class="venue-body">
-          <span class="venue-tag">Parque</span>
-          <h3>Six Flags México</h3>
-          <p>El parque de diversiones más visitado de México, con más de 50 juegos y montañas rusas.</p>
-        </div>
-      </article>
-
-      <article class="venue-card">
-        <div class="venue-media"><div class="venue-logo-tile"><img src="assets/img/logos-convenios/enigma-rooms.jpg" alt="Enigma Rooms" /></div></div>
-        <div class="venue-body">
-          <span class="venue-tag">Escape room</span>
-          <h3>Enigma Rooms</h3>
-          <p>Cuartos de escape temáticos para retar y unir al equipo, un plan distinto a la junta de siempre.</p>
-        </div>
-      </article>
+    <div class="establecimientos-more">
+      <button type="button" class="btn btn-ghost btn-lg" id="verTodosBtn">Ver todos los establecimientos</button>
     </div>
   </div>
 </section>
@@ -247,21 +259,20 @@
   <div class="container empresas-grid">
     <div data-reveal>
       <span class="eyebrow on-dark">Para empresas</span>
-      <h2>Un beneficio que tu equipo sí usa.</h2>
-      <p class="lead">No otra línea en el PDF de prestaciones. Activa es el beneficio que tu gente activa, comenta y vuelve a usar cada mes.</p>
+      <p class="lead">No es otra línea más en el PDF de prestaciones. Activa es el beneficio que tus colaboradores necesitan, disfrutan y usan cada mes.</p>
 
       <ul class="empresas-list">
         <li>
           <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <p><strong>Panel simple para RH</strong>Altas, bajas y reportes de uso sin depender de hojas de cálculo.</p>
+          <p><strong>Panel simple para RH</strong>Altas, bajas y reportes de uso sin depender de hojas de cálculo</p>
         </li>
         <li>
           <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <p><strong>Precio preferencial por colaborador</strong>Facturado directo a la empresa, con planes según tamaño de equipo.</p>
+          <p><strong>Precio fijo por colaborador</strong>Cotización ajustada al tamaño del equipo y facturado directo a la empresa</p>
         </li>
         <li>
           <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <p><strong>Onboarding y soporte incluidos</strong>Acompañamos el lanzamiento con tu equipo desde el primer día.</p>
+          <p><strong>Onboarding y soporte incluidos</strong>Acompañamos el lanzamiento con tu equipo desde el primer día</p>
         </li>
       </ul>
 
@@ -273,29 +284,29 @@
 
     <div class="empresas-card" data-reveal>
       <div class="empresas-card-head">
-        <span class="empresas-card-title">Panel para RH</span>
-        <div class="empresas-card-tabs" role="tablist" aria-label="Vista del panel">
-          <button type="button" class="active">Uso</button>
-          <button type="button">Facturación</button>
-        </div>
+        <span class="empresas-card-title">Panel de métricas de uso para RH</span>
       </div>
 
-      <div class="empresas-metric-grid">
+      <div class="empresas-metric-grid five">
         <div class="empresas-metric">
-          <b>6</b>
-          <span>Convenios activos hoy, creciendo cada trimestre</span>
+          <b>120+</b>
+          <span># Colaboradores activos</span>
+        </div>
+        <div class="empresas-metric">
+          <b>68%</b>
+          <span>Uso mensual general</span>
+        </div>
+        <div class="empresas-metric">
+          <b>82%</b>
+          <span>% de colaboradores que usan Activa cada mes</span>
         </div>
         <div class="empresas-metric">
           <b>1</b>
-          <span>Panel de administración para todo el equipo</span>
+          <span>Reporte mensual de uso descargable</span>
         </div>
         <div class="empresas-metric">
-          <b>0</b>
-          <span>Procesos manuales de vouchers o reembolsos</span>
-        </div>
-        <div class="empresas-metric">
-          <b>24h</b>
-          <span>Tiempo promedio de activación por colaborador</span>
+          <b>24/7</b>
+          <span>Dashboard interactivo con filtros generales y por colaborador</span>
         </div>
       </div>
     </div>
@@ -313,16 +324,15 @@
 
     <div class="plans-grid">
       <div class="plan-card" data-reveal>
-        <span class="plan-name">Individual</span>
-        <div class="plan-price"><span class="amount">$249</span><span class="period">MXN / mes</span></div>
-        <p class="plan-desc">Para quien quiere probar el plan sin compromiso.</p>
+        <span class="plan-name">Básico</span>
+        <div class="plan-price"><span class="amount">Cubierto</span></div>
+        <p class="plan-desc">Tu empresa cubre el plan básico. Tú eliges el plan que mejor se ajuste a tu ritmo</p>
         <ul class="plan-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acceso a los 6 convenios</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4 entradas al mes</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 titular</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>App y credencial digital</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Credencial digital</li>
         </ul>
-        <a href="#cta-final" class="btn btn-ghost">Elegir Individual</a>
+        <span class="btn btn-ghost">¡Ya lo tienes!</span>
       </div>
 
       <div class="plan-card featured" data-reveal>
@@ -331,7 +341,7 @@
         <div class="plan-price"><span class="amount">$399</span><span class="period">MXN / mes</span></div>
         <p class="plan-desc">Para quien realmente quiere usar el plan seguido.</p>
         <ul class="plan-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acceso a los 6 convenios</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acceso a los 6 establecimientos</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cine ilimitado + 6 experiencias/mes</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 titular + 1 invitado</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Soporte prioritario</li>
@@ -344,7 +354,7 @@
         <div class="plan-price"><span class="amount">$549</span><span class="period">MXN / mes</span></div>
         <p class="plan-desc">Para quien quiere vivir el plan sin límites, todo el mes.</p>
         <ul class="plan-features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acceso a los 6 convenios</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Acceso a los 6 establecimientos</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cine y experiencias ilimitadas</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1 titular + 2 invitados</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Soporte prioritario 24/7</li>
@@ -353,15 +363,7 @@
       </div>
     </div>
 
-    <div class="plans-extra">
-      <div class="plans-extra-card" data-reveal>
-        <div>
-          <span class="plans-extra-tag">Para empresas</span>
-          <h3>Precio preferencial por equipo</h3>
-          <p>Facturado directo a la empresa, con condiciones según el tamaño del equipo y panel de administración para RH.</p>
-        </div>
-        <a href="#cta-final" class="btn btn-primary">Agendar demo</a>
-      </div>
+    <div class="plans-extra single">
       <div class="plans-extra-card muted" data-reveal>
         <div>
           <span class="plans-extra-tag">Próximamente</span>
@@ -374,6 +376,45 @@
   </div>
 </section>
 
+<!-- ============ QUIÉNES SOMOS ============ -->
+<section class="content-section alt" id="quienes-somos">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Creemos que un beneficio solo cuenta si se usa</h2>
+      <p>Activa nace para cerrar la brecha entre lo que las empresas ofrecen y lo que sus equipos realmente disfrutan.</p>
+    </div>
+
+    <div class="about-grid" data-reveal>
+      <div class="about-card">
+        <span class="about-num">Origen</span>
+        <h3>Nació de una frustración real</h3>
+        <p>Vimos que las empresas invertían en prestaciones que no se utilizaban; vouchers que se pierden en el correo, convenios difíciles de encontrar y procesos manuales para RH.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-num">Propósito</span>
+        <h3>Que el beneficio se sienta como un regalo, no un trámite</h3>
+        <p>Diseñamos Activa para que usar el beneficio tome minutos, no formularios. Todo dentro de un mismo ecosistema fácil de utilizar.</p>
+      </div>
+      <div class="about-card">
+        <span class="about-num">Diferencia</span>
+        <h3>Una red que crece contigo</h3>
+        <p>No somos un catálogo estático; sumamos establecimientos y experiencias nuevas de manera periódica, con reportes y métricas de uso transparentes para tu empresa.</p>
+      </div>
+    </div>
+
+    <div class="stats-block" data-reveal>
+      <h3 class="stats-title">Activa en números</h3>
+      <div class="about-stats">
+        <div class="stat"><b>6</b><span>Establecimientos</span></div>
+        <div class="stat"><b>500+</b><span>Miembros</span></div>
+        <div class="stat"><b>15+</b><span>Empresas activas</span></div>
+        <div class="stat"><b>CDMX</b><span>Presencia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CTA FINAL ============ -->
 <section class="cta-final" id="cta-final">
   <div class="container">
@@ -381,7 +422,7 @@
       <h2>¿Listo para activar el plan?</h2>
       <p>Agenda una demo con nuestro equipo o descarga la app si tu empresa ya tiene Activa.</p>
       <div class="cta-final-actions">
-        <a href="para-empresas.html#cotizar" class="btn btn-primary btn-lg">Agendar demo</a>
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ27aljISePwQA3tZ8NQvyodQPytPJ10TDpdiYipDvIDZebDPcnR09OWuSs8x0y1qmoKgM72L2jB" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Agendar demo</a>
         <a href="#" class="btn btn-ghost btn-lg">Descargar la app</a>
       </div>
     </div>
@@ -397,22 +438,22 @@
           <img src="assets/img/brand/activa-symbol.png" alt="" />
           activa
         </a>
-        <p>El beneficio de entretenimiento corporativo que tu equipo realmente activa. Cine, museos, parques y experiencias en una sola membresía.</p>
+        <p>El beneficio de entretenimiento corporativo que tu equipo realmente utiliza. Cine, museos, parques y experiencias en una sola membresía</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
         <ul>
           <li><a href="#como-funciona">Cómo funciona</a></li>
-          <li><a href="establecimientos.html">Buscar establecimientos</a></li>
+          <li><a href="#establecimientos">Buscar establecimientos</a></li>
           <li><a href="#planes">Planes</a></li>
+          <li><a href="#quienes-somos">Quiénes somos</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Empresas</h4>
+        <h4>Soluciones</h4>
         <ul>
-          <li><a href="para-empresas.html">Para empresas</a></li>
-          <li><a href="para-colaboradores.html">Para colaboradores</a></li>
-          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="para-empresas.html" target="_blank" rel="noopener">Para empresas</a></li>
+          <li><a href="para-colaboradores.html" target="_blank" rel="noopener">Para colaboradores</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -434,6 +475,8 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/establecimientos.js"></script>
 </body>
 </html>
