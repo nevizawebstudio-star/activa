@@ -631,8 +631,8 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--venue-accent);
-  background: var(--venue-accent-tint);
+  color: var(--venue-accent, var(--c-blue));
+  background: var(--venue-accent-tint, var(--c-tint-blue));
   padding: 5px 12px;
   border-radius: var(--r-pill);
   margin-bottom: var(--sp-3);
