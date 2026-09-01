@@ -78,7 +78,7 @@
     "id": "papalote-museo-del-nino",
     "nombre": "Papalote Museo del Niño",
     "categoria": "Museo",
-    "logo": "assets/img/logos-convenios/logo-pendiente.svg",
+    "logo": "assets/img/logos-convenios/papalote-museo-del-nino.png",
     "descripcion": "Museo interactivo con salas de ciencia, tecnología y arte pensadas para grandes y chicos",
     "tokens": 1,
     "sucursales": [
@@ -89,7 +89,7 @@
     "id": "jump-in",
     "nombre": "Jump-In",
     "categoria": "Parque",
-    "logo": "assets/img/logos-convenios/logo-pendiente.svg",
+    "logo": "assets/img/logos-convenios/jump-in.png",
     "descripcion": "Parque de trampolines y actividades de alto brinco para pasar un día activo en equipo",
     "tokens": 1,
     "sucursales": [
@@ -100,7 +100,7 @@
     "id": "metropoli-jump-center",
     "nombre": "Metrópoli Jump center",
     "categoria": "Parque",
-    "logo": "assets/img/logos-convenios/logo-pendiente.svg",
+    "logo": "assets/img/logos-convenios/metropoli-jump-center.png",
     "descripcion": "Centro de trampolines y juegos de brinco para equipos que buscan un plan distinto",
     "tokens": 1,
     "sucursales": [
