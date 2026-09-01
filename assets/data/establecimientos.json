@@ -4,13 +4,17 @@
     "nombre": "Cinemex",
     "categoria": "Cine",
     "logo": "assets/img/logos-convenios/cinemex.jpg",
-    "descripcion": "La cadena de cines más grande de México, con salas tradicionales, premium y platino en todas sus sucursales de la Ciudad de México",
-    "paquete": "Incluido en todos los planes",
+    "descripcion": "Una de las cadenas de cine más grandes de México, con salas tradicionales, premium y platino para disfrutar de los estrenos más recientes",
     "tokens": 2,
     "sucursales": [
       { "nombre": "Cinemex Universidad", "ciudad": "CDMX", "zona": "Coyoacán", "direccion": "Av. Universidad 1000, Coyoacán", "lat": 19.3237, "lng": -99.1782, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
       { "nombre": "Cinemex Santa Fe", "ciudad": "CDMX", "zona": "Cuajimalpa", "direccion": "Av. Vasco de Quiroga 3800, Santa Fe", "lat": 19.3590, "lng": -99.2705, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Perisur", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Anillo Periférico 4690, Perisur", "lat": 19.3080, "lng": -99.1868, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." }
+      { "nombre": "Cinemex Perisur", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Anillo Periférico 4690, Perisur", "lat": 19.3080, "lng": -99.1868, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
+      { "nombre": "Cinemex Mitikah", "ciudad": "CDMX", "zona": "Xoco", "direccion": "Río Churubusco 601, Xoco", "lat": 19.3663, "lng": -99.1614, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
+      { "nombre": "Cinemex Antara Polanco", "ciudad": "CDMX", "zona": "Polanco", "direccion": "Av. Ejército Nacional 843, Polanco", "lat": 19.4406, "lng": -99.2081, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
+      { "nombre": "Cinemex Parque Delta", "ciudad": "CDMX", "zona": "Narvarte", "direccion": "Av. Cuauhtémoc 462, Narvarte", "lat": 19.3936, "lng": -99.1543, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
+      { "nombre": "Cinemex WTC", "ciudad": "CDMX", "zona": "Nápoles", "direccion": "Montecito 38, Nápoles", "lat": 19.3948, "lng": -99.1776, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
+      { "nombre": "Cinemex Loreto", "ciudad": "CDMX", "zona": "Álvaro Obregón", "direccion": "Altamirano 46, San Ángel", "lat": 19.3459, "lng": -99.1934, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." }
     ]
   },
   {
@@ -19,7 +23,6 @@
     "categoria": "Museo",
     "logo": "assets/img/logos-convenios/museo-memoria-tolerancia.jpg",
     "descripcion": "Museo dedicado a la memoria, los genocidios y los derechos humanos, junto a la Alameda Central",
-    "paquete": "Incluido en todos los planes",
     "tokens": 1,
     "sucursales": [
       { "nombre": "Museo Memoria y Tolerancia - Centro Histórico", "ciudad": "CDMX", "zona": "Centro Histórico", "direccion": "Plaza Juárez 8, Centro Histórico", "lat": 19.4326, "lng": -99.1445, "acceso": "Muestra tu credencial digital Activa en el acceso principal." }
@@ -31,7 +34,6 @@
     "categoria": "Acuario",
     "logo": "assets/img/logos-convenios/acuario-inbursa.jpg",
     "descripcion": "Uno de los acuarios más grandes de México, con más de 200 especies en Plaza Carso",
-    "paquete": "Incluido en todos los planes",
     "tokens": 1,
     "sucursales": [
       { "nombre": "Acuario Inbursa - Polanco", "ciudad": "CDMX", "zona": "Polanco", "direccion": "Blvd. Manuel Ávila Camacho, Plaza Carso, Polanco", "lat": 19.4402, "lng": -99.2065, "acceso": "Muestra tu credencial digital Activa en taquilla." }
@@ -43,7 +45,6 @@
     "categoria": "Boliche",
     "logo": "assets/img/logos-convenios/bowlero.jpg",
     "descripcion": "La cadena de boliche más grande del mundo, con pistas, arcade y buen ambiente para el equipo",
-    "paquete": "Incluido en todos los planes",
     "tokens": 2,
     "sucursales": [
       { "nombre": "Bowlero Perisur", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Anillo Periférico 4690, Perisur", "lat": 19.3090, "lng": -99.1870, "acceso": "Presenta tu credencial digital Activa en recepción para asignar pista." },
@@ -56,7 +57,6 @@
     "categoria": "Parque",
     "logo": "assets/img/logos-convenios/six-flags.jpg",
     "descripcion": "El parque de diversiones más visitado de México, con más de 50 juegos y montañas rusas",
-    "paquete": "Incluido en todos los planes",
     "tokens": 4,
     "sucursales": [
       { "nombre": "Six Flags México - Ajusco", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Carr. Picacho Ajusco 1500, Héroes de Padierna", "lat": 19.2833, "lng": -99.2167, "acceso": "Canjea tu pase digital Activa por tu boleto en taquilla o en línea." }
@@ -68,11 +68,43 @@
     "categoria": "Escape room",
     "logo": "assets/img/logos-convenios/enigma-rooms.jpg",
     "descripcion": "Cuartos de escape temáticos para retar y unir al equipo, un plan distinto a la junta de siempre",
-    "paquete": "Incluido en todos los planes",
     "tokens": 3,
     "sucursales": [
       { "nombre": "Enigma Rooms Condesa", "ciudad": "CDMX", "zona": "Condesa", "direccion": "Av. Michoacán 30, Condesa", "lat": 19.4126, "lng": -99.1760, "acceso": "Reserva tu horario desde la app y presenta tu credencial digital Activa." },
       { "nombre": "Enigma Rooms Polanco", "ciudad": "CDMX", "zona": "Polanco", "direccion": "Calle Homero 1425, Polanco", "lat": 19.4340, "lng": -99.1950, "acceso": "Reserva tu horario desde la app y presenta tu credencial digital Activa." }
+    ]
+  },
+  {
+    "id": "papalote-museo-del-nino",
+    "nombre": "Papalote Museo del Niño",
+    "categoria": "Museo",
+    "logo": "assets/img/logos-convenios/logo-pendiente.svg",
+    "descripcion": "Museo interactivo con salas de ciencia, tecnología y arte pensadas para grandes y chicos",
+    "tokens": 1,
+    "sucursales": [
+      { "nombre": "Papalote Museo del Niño - Chapultepec", "ciudad": "CDMX", "zona": "Miguel Hidalgo", "direccion": "Pendiente de confirmar dirección exacta y horario con el establecimiento", "acceso": "Muestra tu credencial digital Activa en taquilla." }
+    ]
+  },
+  {
+    "id": "jump-in",
+    "nombre": "Jump-In",
+    "categoria": "Parque",
+    "logo": "assets/img/logos-convenios/logo-pendiente.svg",
+    "descripcion": "Parque de trampolines y actividades de alto brinco para pasar un día activo en equipo",
+    "tokens": 1,
+    "sucursales": [
+      { "nombre": "Jump-In - sucursal por confirmar", "ciudad": "CDMX", "zona": "Por confirmar", "direccion": "Pendiente de confirmar dirección y sucursales con el establecimiento", "acceso": "Muestra tu credencial digital Activa en taquilla." }
+    ]
+  },
+  {
+    "id": "metropoli-jump-center",
+    "nombre": "Metrópoli Jump center",
+    "categoria": "Parque",
+    "logo": "assets/img/logos-convenios/logo-pendiente.svg",
+    "descripcion": "Centro de trampolines y juegos de brinco para equipos que buscan un plan distinto",
+    "tokens": 1,
+    "sucursales": [
+      { "nombre": "Metrópoli Jump center - sucursal por confirmar", "ciudad": "CDMX", "zona": "Por confirmar", "direccion": "Pendiente de confirmar dirección y sucursales con el establecimiento", "acceso": "Muestra tu credencial digital Activa en taquilla." }
     ]
   }
 ]

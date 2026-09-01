@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tokensHtml = typeof item.tokens === 'number'
       ? `<span class="establecimiento-tokens">Valor: ${item.tokens} tokens</span>`
       : '';
+    const sucursalesCountHtml = item.sucursales.length > 1
+      ? `<span class="establecimiento-sucursales-count">${item.sucursales.length} ubicaciones</span>`
+      : '';
     return `
       <article class="establecimiento-card">
         ${tokensHtml}
@@ -78,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <p class="desc">${item.descripcion}</p>
+        ${sucursalesCountHtml}
         <div class="establecimiento-sucursales">${sucursalesHtml}</div>
-        <span class="establecimiento-paquete">${item.paquete}</span>
       </article>
     `;
   }
@@ -146,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
       data = items;
       populateFilters(items);
       render();
+      const heroCount = document.getElementById('heroEstablecimientosCount');
+      if (heroCount) heroCount.textContent = `+${items.length}`;
     })
     .catch(() => {
       grid.innerHTML = '<p class="no-results">No se pudo cargar el catálogo. Intenta de nuevo más tarde.</p>';
