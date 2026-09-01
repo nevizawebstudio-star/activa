@@ -1311,7 +1311,7 @@ body.modal-open { overflow: hidden; }
 
 .stats-title {
   text-align: center;
-  color: var(--c-green-ink);
+  color: var(--c-green);
   font-weight: 900;
   font-size: var(--fs-h3);
   margin-bottom: var(--sp-8);
