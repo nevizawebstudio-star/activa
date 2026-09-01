@@ -582,6 +582,19 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .step-card h3 { font-size: 1.1rem; margin-bottom: var(--sp-2); }
 .step-card p { color: var(--c-text-soft); font-size: var(--fs-small); }
 
+/* Swipe hint: only shown on narrow viewports, next to horizontally-scrollable card rows */
+.swipe-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: var(--sp-5);
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  color: var(--c-text-faint);
+}
+.swipe-hint svg { width: 14px; height: 14px; }
+
 /* ---------- Convenios grid ---------- */
 .convenios { padding: var(--sp-28) 0; background: var(--c-white); border-block: 1px solid var(--c-border); }
 .convenios-head {
@@ -916,12 +929,36 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   .nav-pill { display: none; }
   .nav-toggle { display: flex; }
   .hero { padding-top: 140px; }
-  .steps { grid-template-columns: 1fr; }
   .convenios-head { flex-direction: column; align-items: flex-start; }
   .venues-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: var(--sp-8); }
   .hero-stats { gap: var(--sp-6); }
   .empresas-metric-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+
+  /* Cards row -> horizontal swipe carousel: less vertical scrolling, easier to compare items at a glance */
+  .steps,
+  .plans-grid {
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--sp-1);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: var(--sp-1);
+  }
+  .steps::-webkit-scrollbar,
+  .plans-grid::-webkit-scrollbar { display: none; }
+  .steps .step-card,
+  .plans-grid .plan-card {
+    scroll-snap-align: start;
+    flex: 0 0 82%;
+    min-width: 0;
+  }
+  /* Undo the tablet-breakpoint centered/capped-width stack so the carousel can use the full phone width */
+  .plans-grid { max-width: none; margin-inline: 0; }
+  .swipe-hint { display: inline-flex; }
 
   /* Hero visual: shrink and tuck in the stickers so they don't overflow/clip on narrow screens */
   .hero-visual { height: 320px; }
