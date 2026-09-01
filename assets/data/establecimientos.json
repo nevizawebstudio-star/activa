@@ -82,7 +82,7 @@
     "descripcion": "Museo interactivo con salas de ciencia, tecnología y arte pensadas para grandes y chicos",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Papalote Museo del Niño - Chapultepec", "ciudad": "CDMX", "zona": "Miguel Hidalgo", "direccion": "Pendiente de confirmar dirección exacta y horario con el establecimiento", "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      { "nombre": "Papalote Museo del Niño - Chapultepec", "ciudad": "CDMX", "zona": "Miguel Hidalgo", "direccion": "Av. de los Compositores 710, Ampliación Daniel Garza, Bosque de Chapultepec II Secc, Miguel Hidalgo, 11830 Ciudad de México, CDMX", "lat": 19.4136353, "lng": -99.1960450, "acceso": "Muestra tu credencial digital Activa en taquilla." }
     ]
   },
   {
@@ -93,7 +93,14 @@
     "descripcion": "Parque de trampolines y actividades de alto brinco para pasar un día activo en equipo",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Jump-In - sucursal por confirmar", "ciudad": "CDMX", "zona": "Por confirmar", "direccion": "Pendiente de confirmar dirección y sucursales con el establecimiento", "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      { "nombre": "Jump-In Churubusco", "ciudad": "CDMX", "zona": "Iztapalapa", "direccion": "Cto. Interior Av. Río Churubusco 1072-11-B, Nueva Rosita, Iztapalapa, 09420 Ciudad de México, CDMX", "lat": 19.3794374, "lng": -99.1043899, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Miramontes", "ciudad": "CDMX", "zona": "Coyoacán", "direccion": "Canal de Miramontes 2053, Coapa, Las Campañas, Coyoacán, 04650 Ciudad de México, CDMX", "lat": 19.3100875, "lng": -99.1266037, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Vallejo", "ciudad": "CDMX", "zona": "Azcapotzalco", "direccion": "Calz. Vallejo 1090, Piso 2, Local 2017-210, Sta. Cruz de las Salinas, Azcapotzalco, 02340 Ciudad de México, CDMX", "lat": 19.4882779, "lng": -99.1556056, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Coacalco", "ciudad": "Edomex", "zona": "Coacalco", "direccion": "Av. José López Portillo 145, La Magdalena Huizachitla, 55714 San Francisco Coacalco, Méx.", "lat": 19.6321030, "lng": -99.0913919, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Cúspide (Sky Mall)", "ciudad": "Edomex", "zona": "Naucalpan de Juárez", "direccion": "Sky Mall, La Cúspide, 53126 Naucalpan de Juárez, Méx.", "lat": 19.5153333, "lng": -99.2693569, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Ecatepec", "ciudad": "Edomex", "zona": "Ecatepec", "direccion": "Av. Insurgentes, Mz. 138 Lote 1, Local SA-11, Conjunto Urbano Las Américas, 55076 Ecatepec de Morelos, Méx.", "lat": 19.5820242, "lng": -99.0206779, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Interlomas", "ciudad": "Edomex", "zona": "Interlomas", "direccion": "Portón del Secreto 7, Local AN2-13, Lomas Country Club, 52779 Naucalpan de Juárez, Méx.", "lat": 19.3978815, "lng": -99.2865687, "acceso": "Muestra tu credencial digital Activa en taquilla." },
+      { "nombre": "Jump-In Cuernavaca", "ciudad": "Morelos", "zona": "Cuernavaca", "direccion": "Plaza Forum Cuernavaca, Calle Jacarandas 103, Local PE-35C, Ricardo Flores Magón, 62376 Cuernavaca, Mor.", "lat": 18.9258100, "lng": -99.2018682, "acceso": "Muestra tu credencial digital Activa en taquilla." }
     ]
   },
   {
@@ -104,7 +111,7 @@
     "descripcion": "Centro de trampolines y juegos de brinco para equipos que buscan un plan distinto",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Metrópoli Jump center - sucursal por confirmar", "ciudad": "CDMX", "zona": "Por confirmar", "direccion": "Pendiente de confirmar dirección y sucursales con el establecimiento", "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      { "nombre": "Metrópoli Jump center - Patriotismo", "ciudad": "CDMX", "zona": "Benito Juárez", "direccion": "Centro Comercial Metrópoli Patriotismo, Av. Patriotismo 229, Escandón, Benito Juárez, 03800 Ciudad de México, CDMX", "lat": 19.3963198, "lng": -99.1805886, "acceso": "Muestra tu credencial digital Activa en taquilla." }
     ]
   }
 ]

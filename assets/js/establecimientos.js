@@ -151,6 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
       render();
       const heroCount = document.getElementById('heroEstablecimientosCount');
       if (heroCount) heroCount.textContent = `+${items.length}`;
+      const statsCount = document.getElementById('statsEstablecimientosCount');
+      if (statsCount) statsCount.textContent = items.length;
     })
     .catch(() => {
       grid.innerHTML = '<p class="no-results">No se pudo cargar el catálogo. Intenta de nuevo más tarde.</p>';
