@@ -210,6 +210,20 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   font-size: 1.05rem;
   flex: none;
 }
+/* En la barra de navegación (fija sobre el contenido), el logo necesita su
+   propio fondo blanco para no perderse sobre secciones con color/imagen
+   detrás, tanto en compu como en celular. */
+.nav .brand {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(231,234,240,0.9);
+  border-radius: var(--r-pill);
+  padding: 6px 16px 6px 6px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+}
+.nav.scrolled .brand { box-shadow: var(--shadow-md); background: rgba(255,255,255,0.95); }
 .brand img {
   height: 30px;
   width: 30px;
