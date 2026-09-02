@@ -287,6 +287,8 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 }
 .nav-login-menu a:hover { background: var(--c-tint-blue); color: var(--c-blue); }
 
+.nav-login-mobile { display: none; }
+
 .nav-toggle {
   display: none;
   width: 40px;
@@ -928,6 +930,8 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 @media (max-width: 720px) {
   .nav-pill { display: none; }
   .nav-toggle { display: flex; }
+  .nav-login-mobile { display: flex; }
+  .nav-login-mobile .nav-login-menu { right: -6px; }
   .hero { padding-top: 140px; }
   .convenios-head { flex-direction: column; align-items: flex-start; }
   .venues-grid { grid-template-columns: 1fr; }

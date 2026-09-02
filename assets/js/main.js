@@ -35,29 +35,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---- Login dropdown (Soy colaborador / Soy empresa) ---- */
-  const loginTrigger = document.getElementById('loginTrigger');
-  const loginMenu = document.getElementById('loginMenu');
-  let closeLoginMenu = () => {};
-  if (loginTrigger && loginMenu) {
-    closeLoginMenu = () => {
-      loginMenu.classList.remove('open');
-      loginTrigger.setAttribute('aria-expanded', 'false');
+  /* Se reutiliza para el botón de escritorio (dentro del nav-pill) y el
+     botón visible en la barra superior en celular (mobileLoginTrigger). */
+  const closeFns = [];
+  const closeAllLoginMenus = () => closeFns.forEach(fn => fn());
+
+  function setupLoginDropdown(triggerId, menuId) {
+    const trigger = document.getElementById(triggerId);
+    const menu = document.getElementById(menuId);
+    if (!trigger || !menu) return;
+    const close = () => {
+      menu.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
     };
-    const toggleLoginMenu = () => {
-      const isOpen = loginMenu.classList.toggle('open');
-      loginTrigger.setAttribute('aria-expanded', String(isOpen));
-    };
-    loginTrigger.addEventListener('click', (e) => {
+    closeFns.push(close);
+    trigger.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleLoginMenu();
+      const isOpen = menu.classList.contains('open');
+      closeAllLoginMenus();
+      if (mobileSheet) mobileSheet.classList.remove('open');
+      if (!isOpen) {
+        menu.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
     });
     document.addEventListener('click', (e) => {
-      if (!loginMenu.contains(e.target) && e.target !== loginTrigger) closeLoginMenu();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLoginMenu();
+      if (!menu.contains(e.target) && e.target !== trigger) close();
     });
   }
+
+  setupLoginDropdown('loginTrigger', 'loginMenu');
+  setupLoginDropdown('mobileLoginTrigger', 'mobileLoginMenu');
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllLoginMenus();
+  });
+
+  if (navToggle) {
+    navToggle.addEventListener('click', closeAllLoginMenus);
+  }
+
+  const closeLoginMenu = closeAllLoginMenus;
 
   /* ---- Login modal: "Soy colaborador" / "Soy empresa" abren el mismo pop up de login (aún no activo) ---- */
   const loginModal = document.getElementById('loginModal');
