@@ -218,7 +218,6 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   background: var(--c-white);
   box-shadow: var(--shadow-sm);
 }
-.footer-brand .brand img { background: transparent; box-shadow: none; padding: 0; }
 
 .nav-pill {
   pointer-events: auto;
