@@ -301,6 +301,9 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .nav-login-menu a:hover { background: var(--c-tint-blue); color: var(--c-blue); }
 
 .nav-login-mobile { display: none; }
+/* Agrupa el ícono de login y el de hamburguesa para que queden pegados,
+   uno junto al otro, en vez de repartidos por separado con espacio entre. */
+.nav-mobile-actions { display: flex; align-items: center; gap: var(--sp-2); }
 
 .nav-toggle {
   display: none;
@@ -501,7 +504,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   display: flex;
   gap: var(--sp-6);
   align-items: center;
-  animation: scroll-x 32s linear infinite;
+  animation: scroll-x 48s linear infinite;
   flex: none;
   padding-inline: var(--sp-5);
   padding-block: var(--sp-3);
@@ -899,6 +902,9 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   border-bottom: 1px solid var(--c-border-dark);
 }
 .footer-brand .brand { color: var(--c-white); }
+/* En el footer el símbolo va sin marco blanco: se deja "flotando" sobre el
+   fondo oscuro, tanto en compu como en celular. */
+.footer-brand .brand img { background: transparent; box-shadow: none; padding: 0; }
 .footer-brand p { margin-top: var(--sp-4); color: var(--c-text-on-dark-soft); font-size: var(--fs-small); max-width: 280px; }
 .footer-col h4 { font-size: var(--fs-caption); text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-text-on-dark-soft); margin-bottom: var(--sp-4); }
 .footer-col ul { display: flex; flex-direction: column; gap: var(--sp-3); }
@@ -952,14 +958,17 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   .hero-stats { gap: var(--sp-6); }
   .empresas-metric-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
 
-  /* Cards row -> horizontal swipe carousel: less vertical scrolling, easier to compare items at a glance */
+  /* Cards row -> horizontal swipe carousel: less vertical scrolling, easier to compare items at a glance.
+     Cada tarjeta queda centrada en pantalla (con un poco de la anterior/siguiente asomando a los lados),
+     alineada con el título centrado de la sección, en vez de pegada al borde izquierdo. */
   .steps,
   .plans-grid {
     display: flex;
     grid-template-columns: unset;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: var(--sp-1);
+    scroll-padding-inline: 9%;
+    padding-inline: 9%;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -969,8 +978,8 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   .plans-grid::-webkit-scrollbar { display: none; }
   .steps .step-card,
   .plans-grid .plan-card {
-    scroll-snap-align: start;
-    flex: 0 0 82%;
+    scroll-snap-align: center;
+    flex: 0 0 100%;
     min-width: 0;
   }
   /* Undo the tablet-breakpoint centered/capped-width stack so the carousel can use the full phone width */

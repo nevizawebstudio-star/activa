@@ -104,14 +104,14 @@
     ]
   },
   {
-    "id": "metropoli-jump-center",
-    "nombre": "Metrópoli Jump center",
-    "categoria": "Parque",
-    "logo": "assets/img/logos-convenios/metropoli-jump-center.png",
-    "descripcion": "Centro de trampolines y juegos de brinco para equipos que buscan un plan distinto",
+    "id": "metropoli-golf-center",
+    "nombre": "Metrópoli Golf Center",
+    "categoria": "Golf",
+    "logo": "assets/img/logos-convenios/metropoli-golf-center.png",
+    "descripcion": "Centro de golf con driving range de 14 estaciones, putting green, mini golf y restaurante, para todos los niveles de juego",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Metrópoli Jump center - Patriotismo", "ciudad": "CDMX", "zona": "Benito Juárez", "direccion": "Centro Comercial Metrópoli Patriotismo, Av. Patriotismo 229, Escandón, Benito Juárez, 03800 Ciudad de México, CDMX", "lat": 19.3963198, "lng": -99.1805886, "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      { "nombre": "Metrópoli Golf Center - Patriotismo", "ciudad": "CDMX", "zona": "Benito Juárez", "direccion": "Av. Patriotismo 229, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX", "lat": 19.3963198, "lng": -99.1805886, "acceso": "Muestra tu credencial digital Activa en recepción." }
     ]
   }
 ]
