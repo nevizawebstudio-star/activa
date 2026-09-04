@@ -222,18 +222,18 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 }
 /* En la barra de navegación (fija sobre el contenido), el logo necesita su
    propio fondo blanco para no perderse sobre secciones con color/imagen
-   detrás, tanto en compu como en celular. */
+   detrás, tanto en compu como en celular. Fondo 100% sólido (sin transparencia
+   ni backdrop-filter) para que nunca se alcance a ver ningún tono de la
+   sección de fondo (p.ej. el azul oscuro de "Para empresas") detrás del pill. */
 .nav .brand {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(16px) saturate(1.4);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  background: var(--c-white);
   border: 1px solid rgba(231,234,240,0.9);
   border-radius: var(--r-pill);
   padding: 6px 16px 6px 6px;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+  transition: box-shadow 0.3s var(--ease);
 }
-.nav.scrolled .brand { box-shadow: var(--shadow-md); background: rgba(255,255,255,0.95); }
+.nav.scrolled .brand { box-shadow: var(--shadow-md); }
 .brand img {
   height: 30px;
   width: 30px;
@@ -241,6 +241,9 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   border-radius: 50%;
   background: var(--c-white);
   box-shadow: var(--shadow-sm);
+  /* El PNG fuente no es perfectamente cuadrado; sin esto se estira/distorsiona
+     al forzarlo a 22x22, dando la impresión de que la marca no se ve completa. */
+  object-fit: contain;
 }
 
 .nav-pill {
@@ -957,10 +960,6 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 }
 
 @media (max-width: 720px) {
-  .nav-pill { display: none; }
-  .nav-toggle { display: flex; }
-  .nav-login-mobile { display: flex; }
-  .nav-login-mobile .nav-login-menu { right: -6px; }
   .hero { padding-top: 140px; }
   .convenios-head { flex-direction: column; align-items: flex-start; }
   .venues-grid { grid-template-columns: 1fr; }
@@ -1012,8 +1011,19 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 /* Nav: tighten a bit to make room for the extra top-level links (doc2 IA) */
 .nav-links { gap: 2px; }
 .nav-links a { padding: 9px 13px; }
+/* Por debajo de este ancho, el pill de escritorio (links + cta) ya no cabe sin
+   recortarse contra el borde de la ventana (p.ej. "Agendar demo" cortado a la
+   mitad cuando el navegador no está en pantalla completa). En vez de afinar un
+   valor exacto y arriesgar que se corte en algún ancho intermedio, usamos el
+   mismo punto de quiebre en el que .nav-inner ya alcanza su ancho tope
+   (1180px + 2*16px de margen = 1212px, redondeado a 1220px): por debajo se
+   usa el menú hamburguesa (que sí cabe siempre), por arriba el ancho
+   disponible es idéntico al de pantalla completa, donde ya sabemos que cabe. */
 @media (max-width: 1220px) {
-  .nav-cta .btn-ghost { display: none; }
+  .nav-pill { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-login-mobile { display: flex; }
+  .nav-login-mobile .nav-login-menu { right: -6px; }
 }
 
 /* ==========================================================================
