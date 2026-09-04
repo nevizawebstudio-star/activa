@@ -243,18 +243,32 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   align-self: stretch;
 }
 .nav.scrolled .brand { box-shadow: var(--shadow-md); }
-.brand img {
+/* El círculo (fondo/borde/sombra + recorte) vive en el contenedor .brand-badge,
+   NUNCA junto con object-fit en el propio <img>: combinar border-radius +
+   object-fit + padding directamente en un <img> es una mezcla frágil que en
+   algunos navegadores desplaza o recorta mal el contenido (la "A" aparecía
+   descentrada/cortada dentro del círculo). Separando el círculo (que solo
+   recorta) de la imagen (que solo hace contain) el resultado es consistente
+   en cualquier navegador. */
+.brand-badge {
   height: 30px;
   width: 30px;
   padding: 6px;
   border-radius: 50%;
   background: var(--c-white);
   box-shadow: var(--shadow-sm);
-  /* El PNG fuente no es perfectamente cuadrado; sin esto se estira/distorsiona
-     al forzarlo a 22x22, dando la impresión de que la marca no se ve completa.
-     El padding deja un margen visible entre el símbolo y el borde del círculo:
-     con solo 4px el trazo de la "A" quedaba casi pegado/tocando el borde
-     circular y se veía como si el logo estuviera cortado. */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.brand-badge img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* El PNG fuente no es perfectamente cuadrado; sin esto se estira/distorsiona,
+     dando la impresión de que la marca no se ve completa. */
   object-fit: contain;
 }
 
@@ -929,7 +943,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .footer-brand .brand { color: var(--c-white); }
 /* En el footer el símbolo va sin marco blanco: se deja "flotando" sobre el
    fondo oscuro, tanto en compu como en celular. */
-.footer-brand .brand img { background: transparent; box-shadow: none; padding: 0; }
+.footer-brand .brand-badge { background: transparent; box-shadow: none; padding: 0; }
 .footer-brand p { margin-top: var(--sp-4); color: var(--c-text-on-dark-soft); font-size: var(--fs-small); max-width: 280px; }
 .footer-col h4 { font-size: var(--fs-caption); text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-text-on-dark-soft); margin-bottom: var(--sp-4); }
 .footer-col ul { display: flex; flex-direction: column; gap: var(--sp-3); }
