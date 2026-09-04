@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let data = [];
   let map = null;
   let markers = [];
+  let clusterGroup = null;
 
   const svgPin = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/></svg>';
 
@@ -104,18 +105,31 @@ document.addEventListener('DOMContentLoaded', () => {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 18,
     }).addTo(map);
+    // Con categorías como Cinemex (78 sucursales) muchos pines quedan encimados
+    // a nivel de ciudad y era casi imposible darle clic al correcto (parecía
+    // que "no aparecían bien" o que no mostraban su información). Agrupar en
+    // clusters resuelve esto: junta los pines cercanos en una burbuja con
+    // número, que se separa/expande al acercar el zoom o darle clic.
+    if (typeof L.markerClusterGroup === 'function') {
+      clusterGroup = L.markerClusterGroup({ maxClusterRadius: 45 });
+      map.addLayer(clusterGroup);
+    }
   }
 
   function renderMapMarkers(items) {
     if (!map) return;
-    markers.forEach(m => map.removeLayer(m));
+    if (clusterGroup) clusterGroup.clearLayers();
+    else markers.forEach(m => map.removeLayer(m));
     markers = [];
     items.forEach(item => {
       item.sucursales.forEach(s => {
         if (typeof s.lat !== 'number' || typeof s.lng !== 'number') return;
-        const marker = L.marker([s.lat, s.lng]).addTo(map);
-        marker.bindPopup(`<b>${s.nombre}</b><span>${item.categoria} · ${s.zona}, ${s.ciudad}</span>`);
+        const marker = L.marker([s.lat, s.lng]);
+        const direccionHtml = s.direccion ? `<span class="popup-address">${s.direccion}</span>` : '';
+        marker.bindPopup(`<b>${s.nombre}</b><span>${item.categoria} · ${s.zona}, ${s.ciudad}</span>${direccionHtml}`);
         markers.push(marker);
+        if (clusterGroup) clusterGroup.addLayer(marker);
+        else marker.addTo(map);
       });
     });
   }
