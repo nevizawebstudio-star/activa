@@ -208,13 +208,11 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.3s var(--ease);
-}
-/* Al hacer scroll se refuerza un poco la sombra (detalle visual), pero el
-   fondo ya está presente desde antes de hacer scroll — ver comentario arriba. */
-.nav.scrolled {
-  box-shadow: var(--shadow-md);
+  /* Sin box-shadow en la franja completa: sobre secciones oscuras, el
+     degradado suave de una sombra se alcanza a ver como una línea
+     gris/"transparente" separada, pegada justo debajo de la barra blanca.
+     Los pills (.brand, .nav-pill) sí conservan su propia sombra pequeña. */
+  box-shadow: none;
 }
 .nav-inner {
   pointer-events: auto;
