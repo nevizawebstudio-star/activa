@@ -205,7 +205,10 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 }
 .nav-inner {
   pointer-events: auto;
-  width: min(100% - 32px, 1180px);
+  /* El contenido real (logo + links + login + botón) mide ~1310px de ancho
+     mínimo; el tope tiene que ser >= eso o el pill se desborda fuera de su
+     caja (y, en ventanas angostas, fuera del propio borde del navegador). */
+  width: min(100% - 32px, 1340px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1013,13 +1016,12 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .nav-links a { padding: 9px 13px; }
 /* Por debajo de este ancho, el pill de escritorio (links + cta) ya no cabe sin
    recortarse contra el borde de la ventana (p.ej. "Agendar demo" cortado a la
-   mitad cuando el navegador no está en pantalla completa). En vez de afinar un
-   valor exacto y arriesgar que se corte en algún ancho intermedio, usamos el
-   mismo punto de quiebre en el que .nav-inner ya alcanza su ancho tope
-   (1180px + 2*16px de margen = 1212px, redondeado a 1220px): por debajo se
-   usa el menú hamburguesa (que sí cabe siempre), por arriba el ancho
-   disponible es idéntico al de pantalla completa, donde ya sabemos que cabe. */
-@media (max-width: 1220px) {
+   mitad cuando el navegador no está en pantalla completa). Medido con el
+   contenido real: el pill necesita ~1340px para no desbordarse de
+   .nav-inner, así que el punto de quiebre es 1340px + 2*16px de margen =
+   1372px, redondeado a 1380px con margen de sobra. Por debajo de eso se usa
+   el menú hamburguesa (que sí cabe siempre). */
+@media (max-width: 1380px) {
   .nav-pill { display: none; }
   .nav-toggle { display: flex; }
   .nav-login-mobile { display: flex; }
