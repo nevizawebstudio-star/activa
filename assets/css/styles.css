@@ -227,7 +227,12 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
    propio fondo blanco para no perderse sobre secciones con color/imagen
    detrás, tanto en compu como en celular. Fondo 100% sólido (sin transparencia
    ni backdrop-filter) para que nunca se alcance a ver ningún tono de la
-   sección de fondo (p.ej. el azul oscuro de "Para empresas") detrás del pill. */
+   sección de fondo (p.ej. el azul oscuro de "Para empresas") detrás del pill.
+   align-self: stretch hace que el pill del logo tenga exactamente el mismo
+   alto que el pill de links/login de al lado (nav-pill); sin esto, el logo
+   queda más bajo y el nav-inner lo centra dejando un hueco arriba/abajo que,
+   mientras el nav no tiene fondo propio (antes de hacer scroll), deja ver el
+   color/imagen de la sección detrás justo pegado al pill blanco. */
 .nav .brand {
   background: var(--c-white);
   border: 1px solid rgba(231,234,240,0.9);
@@ -235,6 +240,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   padding: 6px 16px 6px 6px;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.3s var(--ease);
+  align-self: stretch;
 }
 .nav.scrolled .brand { box-shadow: var(--shadow-md); }
 .brand img {
