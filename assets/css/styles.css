@@ -183,20 +183,14 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .btn-icon { width: 18px; height: 18px; flex: none; }
 
 /* ---------- Nav ---------- */
-/* La franja de la barra (de borde a borde, no solo las píldoras) siempre
-   tiene fondo propio, desde el primer render — nunca depende del estado de
-   scroll ni de una clase que agrega JS. Esto evita por completo que llegue a
-   verse "transparente"/"a través" en cualquier situación (carga directa en
-   una sección, resize de la ventana, glitches de backdrop-filter al
-   redimensionar, etc.). */
+/* Sin fondo/franja propia: el renglón del nav es 100% invisible, de borde a
+   borde y en toda la página (arriba, con scroll, sobre secciones claras u
+   oscuras, siempre). Lo único visible son las dos píldoras (.brand y
+   .nav-pill de abajo), que ya traen su propio fondo sólido/difuminado
+   siempre encendido — así nunca hay una barra/franja de fondo detrás de
+   ellas, ni un hueco, ni una sombra ni línea de ningún tipo. */
 .nav {
   position: fixed;
-  /* top:0 + padding vertical (en vez de top: var(--sp-4) sin padding) para
-     que el fondo de la barra arranque justo en el borde superior de la
-     ventana. Con top:16px y sin padding quedaba una franja de 16px encima
-     de la barra sin fondo propio, dejando ver el color de la sección de
-     fondo (p.ej. la oscura de "Para empresas") — se veía como una tira
-     oscura/"transparente" pegada arriba del nav. */
   top: 0;
   left: 0;
   right: 0;
@@ -205,13 +199,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   justify-content: center;
   padding: var(--sp-4) 0;
   pointer-events: none;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(16px) saturate(1.4);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  /* Sin box-shadow en la franja completa: sobre secciones oscuras, el
-     degradado suave de una sombra se alcanza a ver como una línea
-     gris/"transparente" separada, pegada justo debajo de la barra blanca.
-     Los pills (.brand, .nav-pill) sí conservan su propia sombra pequeña. */
+  background: transparent;
   box-shadow: none;
 }
 .nav-inner {
