@@ -191,12 +191,19 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
    redimensionar, etc.). */
 .nav {
   position: fixed;
-  top: var(--sp-4);
+  /* top:0 + padding vertical (en vez de top: var(--sp-4) sin padding) para
+     que el fondo de la barra arranque justo en el borde superior de la
+     ventana. Con top:16px y sin padding quedaba una franja de 16px encima
+     de la barra sin fondo propio, dejando ver el color de la sección de
+     fondo (p.ej. la oscura de "Para empresas") — se veía como una tira
+     oscura/"transparente" pegada arriba del nav. */
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
   display: flex;
   justify-content: center;
+  padding: var(--sp-4) 0;
   pointer-events: none;
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(16px) saturate(1.4);
