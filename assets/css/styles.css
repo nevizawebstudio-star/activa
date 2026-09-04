@@ -246,12 +246,15 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .brand img {
   height: 30px;
   width: 30px;
-  padding: 4px;
+  padding: 6px;
   border-radius: 50%;
   background: var(--c-white);
   box-shadow: var(--shadow-sm);
   /* El PNG fuente no es perfectamente cuadrado; sin esto se estira/distorsiona
-     al forzarlo a 22x22, dando la impresión de que la marca no se ve completa. */
+     al forzarlo a 22x22, dando la impresión de que la marca no se ve completa.
+     El padding deja un margen visible entre el símbolo y el borde del círculo:
+     con solo 4px el trazo de la "A" quedaba casi pegado/tocando el borde
+     circular y se veía como si el logo estuviera cortado. */
   object-fit: contain;
 }
 
