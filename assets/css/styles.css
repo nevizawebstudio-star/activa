@@ -183,6 +183,12 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .btn-icon { width: 18px; height: 18px; flex: none; }
 
 /* ---------- Nav ---------- */
+/* La franja de la barra (de borde a borde, no solo las píldoras) siempre
+   tiene fondo propio, desde el primer render — nunca depende del estado de
+   scroll ni de una clase que agrega JS. Esto evita por completo que llegue a
+   verse "transparente"/"a través" en cualquier situación (carga directa en
+   una sección, resize de la ventana, glitches de backdrop-filter al
+   redimensionar, etc.). */
 .nav {
   position: fixed;
   top: var(--sp-4);
@@ -192,27 +198,28 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   display: flex;
   justify-content: center;
   pointer-events: none;
-  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), backdrop-filter 0.3s var(--ease);
-}
-/* Al hacer scroll, toda la franja de la barra (de borde a borde, no solo las
-   píldoras) recibe fondo propio, para que el contenido de abajo (marquee,
-   tarjetas, etc.) nunca se vea "a través" ni se encime con los íconos. */
-.nav.scrolled {
   background: rgba(255,255,255,0.85);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s var(--ease);
+}
+/* Al hacer scroll se refuerza un poco la sombra (detalle visual), pero el
+   fondo ya está presente desde antes de hacer scroll — ver comentario arriba. */
+.nav.scrolled {
+  box-shadow: var(--shadow-md);
 }
 .nav-inner {
   pointer-events: auto;
-  /* El contenido real (logo + links + login + botón) mide ~1310px de ancho
-     mínimo; el tope tiene que ser >= eso o el pill se desborda fuera de su
-     caja (y, en ventanas angostas, fuera del propio borde del navegador). */
-  width: min(100% - 32px, 1340px);
+  /* El contenido real compactado (logo + links + login + botón) mide
+     ~1140px de ancho mínimo a partir de aquí; el tope solo importa en
+     pantallas muy anchas (no reduce el pill, solo evita que se estire de
+     más). */
+  width: min(100% - 24px, 1340px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-6);
+  gap: var(--sp-3);
 }
 
 .brand {
@@ -259,13 +266,13 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: var(--sp-6);
+  gap: var(--sp-4);
   background: rgba(255,255,255,0.78);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   border: 1px solid rgba(231,234,240,0.9);
   border-radius: var(--r-pill);
-  padding: var(--sp-2) var(--sp-2) var(--sp-2) var(--sp-2);
+  padding: 6px 6px 6px 6px;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease);
 }
@@ -1017,17 +1024,23 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   .cta-final-panel { padding: var(--sp-10) var(--sp-5); }
 }
 
-/* Nav: tighten a bit to make room for the extra top-level links (doc2 IA) */
+/* Nav: compactado para que el pill completo (todos los links + login +
+   Agendar demo) quepa sin recortarse en ventanas "no pantalla completa"
+   (p.ej. 1280px de ancho, tamaño típico de laptop sin maximizar), en vez de
+   colapsar al menú hamburguesa tan pronto. Se reduce gap/padding/tamaño de
+   letra de los links y de los botones — todo el contenido sigue presente,
+   solo más compacto. */
 .nav-links { gap: 2px; }
-.nav-links a { padding: 9px 13px; }
-/* Por debajo de este ancho, el pill de escritorio (links + cta) ya no cabe sin
+.nav-links a { padding: 8px 10px; font-size: 0.82rem; }
+.nav-cta { gap: var(--sp-1); }
+.nav-cta .btn-sm { padding: 9px 14px; font-size: 0.72rem; gap: 4px; }
+.nav .brand { padding: 6px 14px 6px 6px; font-size: 0.95rem; }
+/* Por debajo de este ancho, incluso el pill compactado ya no cabe sin
    recortarse contra el borde de la ventana (p.ej. "Agendar demo" cortado a la
-   mitad cuando el navegador no está en pantalla completa). Medido con el
-   contenido real: el pill necesita ~1340px para no desbordarse de
-   .nav-inner, así que el punto de quiebre es 1340px + 2*16px de margen =
-   1372px, redondeado a 1380px con margen de sobra. Por debajo de eso se usa
-   el menú hamburguesa (que sí cabe siempre). */
-@media (max-width: 1380px) {
+   mitad). Medido con el contenido real compactado (~1138px + márgenes),
+   con margen de sobra. Por debajo de eso se usa el menú hamburguesa (que sí
+   cabe siempre). */
+@media (max-width: 1200px) {
   .nav-pill { display: none; }
   .nav-toggle { display: flex; }
   .nav-login-mobile { display: flex; }
