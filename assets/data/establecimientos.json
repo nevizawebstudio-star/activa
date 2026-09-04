@@ -7,14 +7,708 @@
     "descripcion": "Una de las cadenas de cine más grandes de México, con salas tradicionales, premium y platino para disfrutar de los estrenos más recientes",
     "tokens": 2,
     "sucursales": [
-      { "nombre": "Cinemex Universidad", "ciudad": "CDMX", "zona": "Coyoacán", "direccion": "Av. Universidad 1000, Coyoacán", "lat": 19.3237, "lng": -99.1782, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Santa Fe", "ciudad": "CDMX", "zona": "Cuajimalpa", "direccion": "Av. Vasco de Quiroga 3800, Santa Fe", "lat": 19.3590, "lng": -99.2705, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Perisur", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Anillo Periférico 4690, Perisur", "lat": 19.3080, "lng": -99.1868, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Mitikah", "ciudad": "CDMX", "zona": "Xoco", "direccion": "Río Churubusco 601, Xoco", "lat": 19.3663, "lng": -99.1614, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Antara Polanco", "ciudad": "CDMX", "zona": "Polanco", "direccion": "Av. Ejército Nacional 843, Polanco", "lat": 19.4406, "lng": -99.2081, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Parque Delta", "ciudad": "CDMX", "zona": "Narvarte", "direccion": "Av. Cuauhtémoc 462, Narvarte", "lat": 19.3936, "lng": -99.1543, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex WTC", "ciudad": "CDMX", "zona": "Nápoles", "direccion": "Montecito 38, Nápoles", "lat": 19.3948, "lng": -99.1776, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." },
-      { "nombre": "Cinemex Loreto", "ciudad": "CDMX", "zona": "Álvaro Obregón", "direccion": "Altamirano 46, San Ángel", "lat": 19.3459, "lng": -99.1934, "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea." }
+      {
+        "nombre": "Cinemex Clavería",
+        "ciudad": "CDMX",
+        "zona": "Azcapotzalco",
+        "direccion": "Av. Egipto número 142, Colonia Claveria Esquina con Irapuato",
+        "lat": 19.4641,
+        "lng": -99.1819,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Ferrería",
+        "ciudad": "CDMX",
+        "zona": "Azcapotzalco",
+        "direccion": "Eje 4 norte Antigua Calzada de Gpe, No.251 Col. Barrio de San Marcos",
+        "lat": 19.4899,
+        "lng": -99.1788,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Portal Vallejo",
+        "ciudad": "CDMX",
+        "zona": "Azcapotzalco",
+        "direccion": "Calzada Vallejo Num. 304, Col. San Francisco Xocotitla. Delegación Azcapotzalco",
+        "lat": 19.468,
+        "lng": -99.1441,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Rosario",
+        "ciudad": "CDMX",
+        "zona": "Azcapotzalco",
+        "direccion": "Av. Cultura Norte No. 902 Col. Centro Habitacional El Rosario",
+        "lat": 19.5044,
+        "lng": -99.2012,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Félix Cuevas",
+        "ciudad": "CDMX",
+        "zona": "Benito Juárez",
+        "direccion": "Av. Félix Cuevas N°374, Col. Del Valle Benito Juárez",
+        "lat": 19.3725,
+        "lng": -99.173,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Galerías Insurgentes",
+        "ciudad": "CDMX",
+        "zona": "Benito Juárez",
+        "direccion": "Parroquia 194, Colonia del Valle Sur, Benito Juárez",
+        "lat": 19.3712,
+        "lng": -99.1789,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Manacar",
+        "ciudad": "CDMX",
+        "zona": "Benito Juárez",
+        "direccion": "Av. Insurgentes 1357. Col Insurgentes Mixcoac Delegacion Benito Juarez",
+        "lat": 19.3722,
+        "lng": -99.1799,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Patriotismo",
+        "ciudad": "CDMX",
+        "zona": "Benito Juárez",
+        "direccion": "Av. Patriotismo esq con Av. Pensilvania Antes De Viaducto",
+        "lat": 19.3962,
+        "lng": -99.1812,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Universidad",
+        "ciudad": "CDMX",
+        "zona": "Benito Juárez",
+        "direccion": "Av. Universidad No. 740 Esq. Miguel Laurent Col. Del Valle",
+        "lat": 19.3735,
+        "lng": -99.1632,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Gran Sur",
+        "ciudad": "CDMX",
+        "zona": "Coyoacán",
+        "direccion": "Periférico Sur No. 5550 Col. Pedregal De Carrasco",
+        "lat": 19.3071,
+        "lng": -99.1644,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Miguel Ángel de Quevedo",
+        "ciudad": "CDMX",
+        "zona": "Coyoacán",
+        "direccion": "Av. Miguel Ángel de Quevedo #1144, Coyoacán",
+        "lat": 19.3431,
+        "lng": -99.1464,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Tlalpan",
+        "ciudad": "CDMX",
+        "zona": "Coyoacán",
+        "direccion": "Calzada Tlalpan No. 4085 Col. Bosques De Tetlameya Delegacion Coyoacan",
+        "lat": 19.2996,
+        "lng": -99.15,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Santa Fe",
+        "ciudad": "CDMX",
+        "zona": "Cuajimalpa",
+        "direccion": "Av. Vasco De Quiroga No. 3800, Santa Fe, Del. Cuajimalpa",
+        "lat": 19.3628,
+        "lng": -99.2739,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Centro Telmex",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Av. Cuauhtemoc y Chapultepec No. 19, Col. Roma Sur, Delegacion Cuauhtemoc",
+        "lat": 19.4256,
+        "lng": -99.1548,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Galerías",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Circuito Interior Esq. Marina Nacional, Galerías Plaza de las Estrellas",
+        "lat": 19.4358,
+        "lng": -99.1703,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Insurgentes",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "San Luis Potosí Esq. Insurgentes No. 214, Col. Roma",
+        "lat": 19.4124,
+        "lng": -99.1662,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Pabellón Cuauhtémoc",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Pabellón Cuauhtémoc Calle Antonio M. Anza No. 20 Esq. Cuauhtémoc, Col. Roma",
+        "lat": 19.4117,
+        "lng": -99.1557,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Parque Delta",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Av. Cuauhtémoc Esq. Obrero Mundial, Col. Narvarte Esq. Viaducto Cuauhtémoc",
+        "lat": 19.4039,
+        "lng": -99.1547,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Portal Centro",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Calle Av. Lorenzo Boturini #258 esquina Francisco Clavijero",
+        "lat": 19.418,
+        "lng": -99.1301,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Real",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Colon 17 Esq. Balderas Y Reforma, Col. Centro, Del. Cuauhtemoc",
+        "lat": 19.4373,
+        "lng": -99.1469,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Reforma 222",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Av. Paseo De La Reforma Numero 222, Col. Juarez, Del. Cuauhtemoc Mexixo",
+        "lat": 19.429,
+        "lng": -99.1622,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Reforma Casa de Arte",
+        "ciudad": "CDMX",
+        "zona": "Cuauhtémoc",
+        "direccion": "Río Guadalquivir No. 104 Col. Cuauhtémoc",
+        "lat": 19.4274,
+        "lng": -99.1693,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Atana Lindavista",
+        "ciudad": "CDMX",
+        "zona": "Gustavo A. Madero",
+        "direccion": "Av. Escuadrón 201 #200, Col. La Purísima Ticoman",
+        "lat": 19.5162,
+        "lng": -99.1444,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Parque Lindavista",
+        "ciudad": "CDMX",
+        "zona": "Gustavo A. Madero",
+        "direccion": "Calle Colector 13 No. 280, Col. Magdalena de las Salinas. G.A. Madero",
+        "lat": 19.4861,
+        "lng": -99.1309,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Patio Martín Carrera",
+        "ciudad": "CDMX",
+        "zona": "Gustavo A. Madero",
+        "direccion": "Avenida Ferrocarril Hidalgo y Avenida San Juan de Aragón, Colonia Martin Carrera",
+        "lat": 19.4842,
+        "lng": -99.1055,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Tenayuca",
+        "ciudad": "CDMX",
+        "zona": "Gustavo A. Madero",
+        "direccion": "Av. La Ventisca, Unidad Croc No. 100",
+        "lat": 19.529,
+        "lng": -99.1559,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Iztapalapa",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Periferico Arco Oriente No. 2141, Col. Ejercito Constitucionalista",
+        "lat": 19.3801,
+        "lng": -99.0602,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex La Viga",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Calzada De La Viga No. 1150, Col. Apatlaco Del Iztapalapa",
+        "lat": 19.3804,
+        "lng": -99.1222,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Lomas Estrella",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Av. Tláhuac número 4409, Colonia Lomas Estrella; Delegación Iztapalapa, Ciudad de México",
+        "lat": 19.3222,
+        "lng": -99.0962,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Plaza Oriente",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Avenida Canal del Tezontle No. 1520, Colonia Dr. Alfonso Ortíz Tirado",
+        "lat": 19.3822,
+        "lng": -99.0798,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Tezontle",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Avenida Canal del Tezontle No. 1512, Colonia Dr. Alfonso Ortíz Tirado",
+        "lat": 19.3844,
+        "lng": -99.084,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Tláhuac",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Avenida Tláhuac No. 5662, Colonia San Lorenzo Tezonco, Deleg. Iztapalapa",
+        "lat": 19.3057,
+        "lng": -99.0606,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Vía San Juan",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Ignacio Zaragoza No.1433 y 2717, esquina con Calle Guadalupe Victoria",
+        "lat": 19.3924,
+        "lng": -99.0495,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Antara",
+        "ciudad": "CDMX",
+        "zona": "Miguel Hidalgo",
+        "direccion": "Av. Ejercito Nacional No. 843-B, Col. Granada",
+        "lat": 19.4389,
+        "lng": -99.2032,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Duraznos",
+        "ciudad": "CDMX",
+        "zona": "Miguel Hidalgo",
+        "direccion": "Bosques de duraznos No. 39, Col. Bosques de las Lomas",
+        "lat": 19.4031,
+        "lng": -99.2423,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Cuicuilco",
+        "ciudad": "CDMX",
+        "zona": "Tlalpan",
+        "direccion": "Av. San Fernando Num. 649 Col. Peña Pobre",
+        "lat": 19.2982,
+        "lng": -99.181,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Galerías Coapa",
+        "ciudad": "CDMX",
+        "zona": "Tlalpan",
+        "direccion": "Calzada Del Hueso No. 519, Col. Residencial Acoxpa",
+        "lat": 19.3032,
+        "lng": -99.1229,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Prado Coapa",
+        "ciudad": "CDMX",
+        "zona": "Tlalpan",
+        "direccion": "Prol. Division Del Norte No. 4515, Col. Prado Coapa Del. Tlapan",
+        "lat": 19.2903,
+        "lng": -99.1319,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Encuentro Oceanía",
+        "ciudad": "CDMX",
+        "zona": "Venustiano Carranza",
+        "direccion": "Avenida Del Peñón 355, Colonia Moctezuma, Segunda Sección, Alcaldía Venustiano Carranza",
+        "lat": 19.4392,
+        "lng": -99.0946,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Arenal",
+        "ciudad": "CDMX",
+        "zona": "Xochimilco",
+        "direccion": "Calzada Arenal #651, Col. Santa María Tepepan Delegación Xochimilco",
+        "lat": 19.2799,
+        "lng": -99.137,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Altavista",
+        "ciudad": "CDMX",
+        "zona": "Álvaro Obregón",
+        "direccion": "Calzada Desierto De Los Leones No.52, Col. San Ángel",
+        "lat": 19.349,
+        "lng": -99.19,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Artz Pedregal",
+        "ciudad": "CDMX",
+        "zona": "Álvaro Obregón",
+        "direccion": "Boulevard Adolfo Ruiz Cortines",
+        "lat": 19.3147,
+        "lng": -99.22,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Loreto",
+        "ciudad": "CDMX",
+        "zona": "Álvaro Obregón",
+        "direccion": "Av. Revolucion y Río Magdalena Col. Tizapan San Ángel",
+        "lat": 19.3385,
+        "lng": -99.1935,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Park Plaza",
+        "ciudad": "CDMX",
+        "zona": "Álvaro Obregón",
+        "direccion": "Javier Barros Sierra Num. 540, Santa Fe Del. Álvaro Obregón",
+        "lat": 19.3651,
+        "lng": -99.2595,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Patio Revolución",
+        "ciudad": "CDMX",
+        "zona": "Álvaro Obregón",
+        "direccion": "Av. Revolución 1837, San Ángel, Delegación Álvaro Obregón",
+        "lat": 19.3416,
+        "lng": -99.1911,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex San Antonio",
+        "ciudad": "CDMX",
+        "zona": "Álvaro Obregón",
+        "direccion": "Calle 10 No. 132 Col. San Pedro De Los Pinos",
+        "lat": 19.3882,
+        "lng": -99.1903,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Chalco",
+        "ciudad": "Edomex",
+        "zona": "Chalco",
+        "direccion": "Av. Vicente Guerrero No. 25 Chalco Edo. De Mexico",
+        "lat": 19.2629,
+        "lng": -98.8974,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Paseo Chalco",
+        "ciudad": "Edomex",
+        "zona": "Chalco",
+        "direccion": "Blvd. Arturo Montiel Rojas Num. 3 Barrio La Conchita Municipio De Chalco",
+        "lat": 19.2514,
+        "lng": -98.8979,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Chimalhuacán",
+        "ciudad": "Edomex",
+        "zona": "Chimalhuacán",
+        "direccion": "Av. Del Peñon \"Embarcadero Viejo\" Col. Barrio De Xochitenco Chimalhuacán",
+        "lat": 19.4218,
+        "lng": -98.9719,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Las Flores Coacalco",
+        "ciudad": "Edomex",
+        "zona": "Coacalco de Berriozábal",
+        "direccion": "Via José López Portillo, San Francisco Coacalco",
+        "lat": 19.6341,
+        "lng": -99.0969,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex La Vía",
+        "ciudad": "Edomex",
+        "zona": "Cuautitlán",
+        "direccion": "Av. Prol. Morelos S/N Esq. Ferrocarril Col. Santa Maria Cuautitlan Mexico",
+        "lat": 19.6697,
+        "lng": -99.1741,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Izcalli",
+        "ciudad": "Edomex",
+        "zona": "Cuautitlán Izcalli",
+        "direccion": "Av. Chalma Esq. Autopista Mexico/Qro. S/N Col. Jardines De La Hacienda Sur",
+        "lat": 19.6715,
+        "lng": -99.2005,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Cd Azteca",
+        "ciudad": "Edomex",
+        "zona": "Ecatepec de Morelos",
+        "direccion": "Av. Central Manzana 632, No. Exterior 50, Ecatepec De Morelos, Edo. De México",
+        "lat": 19.5332,
+        "lng": -99.0276,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Coacalco",
+        "ciudad": "Edomex",
+        "zona": "Ecatepec de Morelos",
+        "direccion": "Av. Constituyentes Jose López Bonaga Col. Guadalupe Victoria Ecatepec",
+        "lat": 19.6272,
+        "lng": -99.0789,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Ecatepec",
+        "ciudad": "Edomex",
+        "zona": "Ecatepec de Morelos",
+        "direccion": "Vía Morelos No. 300, Col. Tultepec",
+        "lat": 19.5578,
+        "lng": -99.0486,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Paseo Ventura",
+        "ciudad": "Edomex",
+        "zona": "Ecatepec de Morelos",
+        "direccion": "Calle Primero De Mayo, Esquina Av. Central, Las Americas Seccion Ii, Municipio De Ecatepec",
+        "lat": 19.5875,
+        "lng": -99.0243,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Huehuetoca",
+        "ciudad": "Edomex",
+        "zona": "Huehuetoca",
+        "direccion": "Carretera Huehuetoca-Jorobas de Salitrillo S/N",
+        "lat": 19.8324,
+        "lng": -99.2075,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Cortijo",
+        "ciudad": "Edomex",
+        "zona": "Ixtapaluca",
+        "direccion": "Carr. Mexico Cuautla Km.37 Mz. 1 Lt.13 Col. Sta. Barbara Ixtapaluca Edo. De México",
+        "lat": 19.2965,
+        "lng": -98.883,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Ixtapaluca",
+        "ciudad": "Edomex",
+        "zona": "Ixtapaluca",
+        "direccion": "Galerias Ixtapaluca, Av. Cuahutemoc Esq. Av. Vigilantes, Autopista Mexico-Puebla",
+        "lat": 19.3125,
+        "lng": -98.8902,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Los Reyes",
+        "ciudad": "Edomex",
+        "zona": "La Paz",
+        "direccion": "Km. 17.5 Carr. Libre México-Puebla Lo Reyes La Paz",
+        "lat": 19.3574,
+        "lng": -98.9891,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex La Joya",
+        "ciudad": "Edomex",
+        "zona": "Melchor Ocampo",
+        "direccion": "Carr. Cuautitlan Melchor Ocampo Esq. Libramiento La Joya, Col. Tlaltepan",
+        "lat": 19.6716,
+        "lng": -99.1658,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Cuatro Caminos",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Transmisiones Militares núm. 30, Naucalpan de Juárez",
+        "lat": 19.4565,
+        "lng": -99.2161,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Interlomas",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Boulevard Palmas Hills, Colonia Valle de las Palmas, Naucalpan de Juárez",
+        "lat": 19.3932,
+        "lng": -99.2817,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Lomas Verdes",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Colina de la Paz No. 25, Col. Fraccionamiento Residencial Boulevares, Naucalpan Edo. de México",
+        "lat": 19.4957,
+        "lng": -99.2464,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Paseo Hipódromo",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Herradura, Manzana H, Fracc. Lomas de Hipódromo, Naucalpan",
+        "lat": 19.4311,
+        "lng": -99.2382,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Samara Satélite",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Calle Circuito Centro Comercial # 20 (Piso 3), Lt. 2, Mz. 283, Local An-02",
+        "lat": 19.5064,
+        "lng": -99.2353,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex San Esteban",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Calzada San Esteban No. 46, San Esteban Huitzilacasco, Naucalpan",
+        "lat": 19.4591,
+        "lng": -99.234,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex San Mateo",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Av. Jardines De San Mateo. Adolfo López Mateos Col. Los Alcanfores",
+        "lat": 19.4813,
+        "lng": -99.251,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Macroplaza Tecámac",
+        "ciudad": "Edomex",
+        "zona": "Tecámac",
+        "direccion": "Lote 1 Mza. 1 Secc. 1 Carr. Federal Lechería-Texcoco y Autopista Mex Pachuca S/N Ejido Tecamac",
+        "lat": 19.6192,
+        "lng": -99.0379,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Mexiquense",
+        "ciudad": "Edomex",
+        "zona": "Tecámac",
+        "direccion": "Manzana 126 lote 1 Colonia Los Héroes, ejido de Santo Tomas Chiconautla, Tecamác",
+        "lat": 19.6306,
+        "lng": -99.0192,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Ojo de Agua",
+        "ciudad": "Edomex",
+        "zona": "Tecámac",
+        "direccion": "Av. Santa Cruz Ojo De Agua No. 88, Unidad Habitacional Real Del Sol, Tecamac",
+        "lat": 19.6672,
+        "lng": -99.0175,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Puerta Texcoco",
+        "ciudad": "Edomex",
+        "zona": "Texcoco",
+        "direccion": "Carr.A Federal Mexico Texcoco Km. 30.5, Col. Ampliacion Presidentes Texcoco",
+        "lat": 19.4253,
+        "lng": -98.9115,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Texcoco",
+        "ciudad": "Edomex",
+        "zona": "Texcoco",
+        "direccion": "Av. Juarez Norte No. 304 Col. Centro Texcoco",
+        "lat": 19.518,
+        "lng": -98.8818,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Mundo E",
+        "ciudad": "Edomex",
+        "zona": "Tlalnepantla de Baz",
+        "direccion": "Blvd. Manuel Ávila Camacho No. 1007, Col. Santa Mónica",
+        "lat": 19.5247,
+        "lng": -99.2269,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Plaza Tlalnepantla",
+        "ciudad": "Edomex",
+        "zona": "Tlalnepantla de Baz",
+        "direccion": "Sor Juana Inés de la Cruz No. 232 y 280. Col. San Lorenzo, Tlalnepantla, Edo de México",
+        "lat": 19.5396,
+        "lng": -99.2055,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Toltecas",
+        "ciudad": "Edomex",
+        "zona": "Tlalnepantla de Baz",
+        "direccion": "Av. Hidalgo 135, Col. Industrial Tlaxcolpan, Tlalnepantla",
+        "lat": 19.555,
+        "lng": -99.1927,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Plaza Jardines Tultitlán",
+        "ciudad": "Edomex",
+        "zona": "Tultitlán",
+        "direccion": "Av. Prado y Pradera, San Pablo de Las Salinas 54932 Tultitlán de Mariano Escobedo",
+        "lat": 19.6656,
+        "lng": -99.081,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      },
+      {
+        "nombre": "Cinemex Zumpango",
+        "ciudad": "Edomex",
+        "zona": "Zumpango",
+        "direccion": "Calle José Jiménez Cantú, Libramiento Luis D. Colosio, calle S/N",
+        "lat": 19.7983,
+        "lng": -99.1052,
+        "acceso": "Presenta tu credencial digital Activa en taquilla o canjea en línea."
+      }
     ]
   },
   {
@@ -25,7 +719,15 @@
     "descripcion": "Museo dedicado a la memoria, los genocidios y los derechos humanos, junto a la Alameda Central",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Museo Memoria y Tolerancia - Centro Histórico", "ciudad": "CDMX", "zona": "Centro Histórico", "direccion": "Plaza Juárez 8, Centro Histórico", "lat": 19.4326, "lng": -99.1445, "acceso": "Muestra tu credencial digital Activa en el acceso principal." }
+      {
+        "nombre": "Museo Memoria y Tolerancia - Centro Histórico",
+        "ciudad": "CDMX",
+        "zona": "Centro Histórico",
+        "direccion": "Plaza Juárez 8, Centro Histórico",
+        "lat": 19.4326,
+        "lng": -99.1445,
+        "acceso": "Muestra tu credencial digital Activa en el acceso principal."
+      }
     ]
   },
   {
@@ -36,7 +738,15 @@
     "descripcion": "Uno de los acuarios más grandes de México, con más de 200 especies en Plaza Carso",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Acuario Inbursa - Polanco", "ciudad": "CDMX", "zona": "Polanco", "direccion": "Blvd. Manuel Ávila Camacho, Plaza Carso, Polanco", "lat": 19.4402, "lng": -99.2065, "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      {
+        "nombre": "Acuario Inbursa - Polanco",
+        "ciudad": "CDMX",
+        "zona": "Polanco",
+        "direccion": "Blvd. Manuel Ávila Camacho, Plaza Carso, Polanco",
+        "lat": 19.4402,
+        "lng": -99.2065,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      }
     ]
   },
   {
@@ -47,8 +757,24 @@
     "descripcion": "La cadena de boliche más grande del mundo, con pistas, arcade y buen ambiente para el equipo",
     "tokens": 2,
     "sucursales": [
-      { "nombre": "Bowlero Perisur", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Anillo Periférico 4690, Perisur", "lat": 19.3090, "lng": -99.1870, "acceso": "Presenta tu credencial digital Activa en recepción para asignar pista." },
-      { "nombre": "Bowlero Santa Fe", "ciudad": "CDMX", "zona": "Cuajimalpa", "direccion": "Av. Vasco de Quiroga 3800, Santa Fe", "lat": 19.3600, "lng": -99.2710, "acceso": "Presenta tu credencial digital Activa en recepción para asignar pista." }
+      {
+        "nombre": "Bowlero Perisur",
+        "ciudad": "CDMX",
+        "zona": "Tlalpan",
+        "direccion": "Anillo Periférico 4690, Perisur",
+        "lat": 19.309,
+        "lng": -99.187,
+        "acceso": "Presenta tu credencial digital Activa en recepción para asignar pista."
+      },
+      {
+        "nombre": "Bowlero Santa Fe",
+        "ciudad": "CDMX",
+        "zona": "Cuajimalpa",
+        "direccion": "Av. Vasco de Quiroga 3800, Santa Fe",
+        "lat": 19.36,
+        "lng": -99.271,
+        "acceso": "Presenta tu credencial digital Activa en recepción para asignar pista."
+      }
     ]
   },
   {
@@ -59,7 +785,15 @@
     "descripcion": "El parque de diversiones más visitado de México, con más de 50 juegos y montañas rusas",
     "tokens": 4,
     "sucursales": [
-      { "nombre": "Six Flags México - Ajusco", "ciudad": "CDMX", "zona": "Tlalpan", "direccion": "Carr. Picacho Ajusco 1500, Héroes de Padierna", "lat": 19.2833, "lng": -99.2167, "acceso": "Canjea tu pase digital Activa por tu boleto en taquilla o en línea." }
+      {
+        "nombre": "Six Flags México - Ajusco",
+        "ciudad": "CDMX",
+        "zona": "Tlalpan",
+        "direccion": "Carr. Picacho Ajusco 1500, Héroes de Padierna",
+        "lat": 19.2833,
+        "lng": -99.2167,
+        "acceso": "Canjea tu pase digital Activa por tu boleto en taquilla o en línea."
+      }
     ]
   },
   {
@@ -70,8 +804,24 @@
     "descripcion": "Cuartos de escape temáticos para retar y unir al equipo, un plan distinto a la junta de siempre",
     "tokens": 3,
     "sucursales": [
-      { "nombre": "Enigma Rooms Condesa", "ciudad": "CDMX", "zona": "Condesa", "direccion": "Av. Michoacán 30, Condesa", "lat": 19.4126, "lng": -99.1760, "acceso": "Reserva tu horario desde la app y presenta tu credencial digital Activa." },
-      { "nombre": "Enigma Rooms Polanco", "ciudad": "CDMX", "zona": "Polanco", "direccion": "Calle Homero 1425, Polanco", "lat": 19.4340, "lng": -99.1950, "acceso": "Reserva tu horario desde la app y presenta tu credencial digital Activa." }
+      {
+        "nombre": "Enigma Rooms Condesa",
+        "ciudad": "CDMX",
+        "zona": "Condesa",
+        "direccion": "Av. Michoacán 30, Condesa",
+        "lat": 19.4126,
+        "lng": -99.176,
+        "acceso": "Reserva tu horario desde la app y presenta tu credencial digital Activa."
+      },
+      {
+        "nombre": "Enigma Rooms Polanco",
+        "ciudad": "CDMX",
+        "zona": "Polanco",
+        "direccion": "Calle Homero 1425, Polanco",
+        "lat": 19.434,
+        "lng": -99.195,
+        "acceso": "Reserva tu horario desde la app y presenta tu credencial digital Activa."
+      }
     ]
   },
   {
@@ -82,7 +832,15 @@
     "descripcion": "Museo interactivo con salas de ciencia, tecnología y arte pensadas para grandes y chicos",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Papalote Museo del Niño - Chapultepec", "ciudad": "CDMX", "zona": "Miguel Hidalgo", "direccion": "Av. de los Compositores 710, Ampliación Daniel Garza, Bosque de Chapultepec II Secc, Miguel Hidalgo, 11830 Ciudad de México, CDMX", "lat": 19.4136353, "lng": -99.1960450, "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      {
+        "nombre": "Papalote Museo del Niño - Chapultepec",
+        "ciudad": "CDMX",
+        "zona": "Miguel Hidalgo",
+        "direccion": "Av. de los Compositores 710, Ampliación Daniel Garza, Bosque de Chapultepec II Secc, Miguel Hidalgo, 11830 Ciudad de México, CDMX",
+        "lat": 19.4136353,
+        "lng": -99.196045,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      }
     ]
   },
   {
@@ -93,14 +851,78 @@
     "descripcion": "Parque de trampolines y actividades de alto brinco para pasar un día activo en equipo",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Jump-In Churubusco", "ciudad": "CDMX", "zona": "Iztapalapa", "direccion": "Cto. Interior Av. Río Churubusco 1072-11-B, Nueva Rosita, Iztapalapa, 09420 Ciudad de México, CDMX", "lat": 19.3794374, "lng": -99.1043899, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Miramontes", "ciudad": "CDMX", "zona": "Coyoacán", "direccion": "Canal de Miramontes 2053, Coapa, Las Campañas, Coyoacán, 04650 Ciudad de México, CDMX", "lat": 19.3100875, "lng": -99.1266037, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Vallejo", "ciudad": "CDMX", "zona": "Azcapotzalco", "direccion": "Calz. Vallejo 1090, Piso 2, Local 2017-210, Sta. Cruz de las Salinas, Azcapotzalco, 02340 Ciudad de México, CDMX", "lat": 19.4882779, "lng": -99.1556056, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Coacalco", "ciudad": "Edomex", "zona": "Coacalco", "direccion": "Av. José López Portillo 145, La Magdalena Huizachitla, 55714 San Francisco Coacalco, Méx.", "lat": 19.6321030, "lng": -99.0913919, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Cúspide (Sky Mall)", "ciudad": "Edomex", "zona": "Naucalpan de Juárez", "direccion": "Sky Mall, La Cúspide, 53126 Naucalpan de Juárez, Méx.", "lat": 19.5153333, "lng": -99.2693569, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Ecatepec", "ciudad": "Edomex", "zona": "Ecatepec", "direccion": "Av. Insurgentes, Mz. 138 Lote 1, Local SA-11, Conjunto Urbano Las Américas, 55076 Ecatepec de Morelos, Méx.", "lat": 19.5820242, "lng": -99.0206779, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Interlomas", "ciudad": "Edomex", "zona": "Interlomas", "direccion": "Portón del Secreto 7, Local AN2-13, Lomas Country Club, 52779 Naucalpan de Juárez, Méx.", "lat": 19.3978815, "lng": -99.2865687, "acceso": "Muestra tu credencial digital Activa en taquilla." },
-      { "nombre": "Jump-In Cuernavaca", "ciudad": "Morelos", "zona": "Cuernavaca", "direccion": "Plaza Forum Cuernavaca, Calle Jacarandas 103, Local PE-35C, Ricardo Flores Magón, 62376 Cuernavaca, Mor.", "lat": 18.9258100, "lng": -99.2018682, "acceso": "Muestra tu credencial digital Activa en taquilla." }
+      {
+        "nombre": "Jump-In Churubusco",
+        "ciudad": "CDMX",
+        "zona": "Iztapalapa",
+        "direccion": "Cto. Interior Av. Río Churubusco 1072-11-B, Nueva Rosita, Iztapalapa, 09420 Ciudad de México, CDMX",
+        "lat": 19.3794374,
+        "lng": -99.1043899,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Miramontes",
+        "ciudad": "CDMX",
+        "zona": "Coyoacán",
+        "direccion": "Canal de Miramontes 2053, Coapa, Las Campañas, Coyoacán, 04650 Ciudad de México, CDMX",
+        "lat": 19.3100875,
+        "lng": -99.1266037,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Vallejo",
+        "ciudad": "CDMX",
+        "zona": "Azcapotzalco",
+        "direccion": "Calz. Vallejo 1090, Piso 2, Local 2017-210, Sta. Cruz de las Salinas, Azcapotzalco, 02340 Ciudad de México, CDMX",
+        "lat": 19.4882779,
+        "lng": -99.1556056,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Coacalco",
+        "ciudad": "Edomex",
+        "zona": "Coacalco",
+        "direccion": "Av. José López Portillo 145, La Magdalena Huizachitla, 55714 San Francisco Coacalco, Méx.",
+        "lat": 19.632103,
+        "lng": -99.0913919,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Cúspide (Sky Mall)",
+        "ciudad": "Edomex",
+        "zona": "Naucalpan de Juárez",
+        "direccion": "Sky Mall, La Cúspide, 53126 Naucalpan de Juárez, Méx.",
+        "lat": 19.5153333,
+        "lng": -99.2693569,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Ecatepec",
+        "ciudad": "Edomex",
+        "zona": "Ecatepec",
+        "direccion": "Av. Insurgentes, Mz. 138 Lote 1, Local SA-11, Conjunto Urbano Las Américas, 55076 Ecatepec de Morelos, Méx.",
+        "lat": 19.5820242,
+        "lng": -99.0206779,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Interlomas",
+        "ciudad": "Edomex",
+        "zona": "Interlomas",
+        "direccion": "Portón del Secreto 7, Local AN2-13, Lomas Country Club, 52779 Naucalpan de Juárez, Méx.",
+        "lat": 19.3978815,
+        "lng": -99.2865687,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      },
+      {
+        "nombre": "Jump-In Cuernavaca",
+        "ciudad": "Morelos",
+        "zona": "Cuernavaca",
+        "direccion": "Plaza Forum Cuernavaca, Calle Jacarandas 103, Local PE-35C, Ricardo Flores Magón, 62376 Cuernavaca, Mor.",
+        "lat": 18.92581,
+        "lng": -99.2018682,
+        "acceso": "Muestra tu credencial digital Activa en taquilla."
+      }
     ]
   },
   {
@@ -111,7 +933,15 @@
     "descripcion": "Centro de golf con driving range de 14 estaciones, putting green, mini golf y restaurante, para todos los niveles de juego",
     "tokens": 1,
     "sucursales": [
-      { "nombre": "Metrópoli Golf Center - Patriotismo", "ciudad": "CDMX", "zona": "Benito Juárez", "direccion": "Av. Patriotismo 229, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX", "lat": 19.3963198, "lng": -99.1805886, "acceso": "Muestra tu credencial digital Activa en recepción." }
+      {
+        "nombre": "Metrópoli Golf Center - Patriotismo",
+        "ciudad": "CDMX",
+        "zona": "Benito Juárez",
+        "direccion": "Av. Patriotismo 229, San Pedro de los Pinos, Benito Juárez, 03800 Ciudad de México, CDMX",
+        "lat": 19.3963198,
+        "lng": -99.1805886,
+        "acceso": "Muestra tu credencial digital Activa en recepción."
+      }
     ]
   }
 ]
