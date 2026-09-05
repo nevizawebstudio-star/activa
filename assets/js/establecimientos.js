@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 18,
     }).addTo(map);
-    // Con categorías como Cinemex (78 sucursales) muchos pines quedan encimados
+    // Con categorías como Cinemex (46 sucursales) muchos pines quedan encimados
     // a nivel de ciudad y era casi imposible darle clic al correcto (parecía
     // que "no aparecían bien" o que no mostraban su información). Agrupar en
     // clusters resuelve esto: junta los pines cercanos en una burbuja con
