@@ -943,7 +943,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
 .footer-brand .brand { color: var(--c-white); }
 /* En el footer el símbolo va sin marco blanco: se deja "flotando" sobre el
    fondo oscuro, tanto en compu como en celular. */
-.footer-brand .brand-badge { background: transparent; box-shadow: none; padding: 0; }
+.footer-brand .brand-badge { background: transparent; box-shadow: none; padding: 0; border-radius: 0; overflow: visible; }
 .footer-brand p { margin-top: var(--sp-4); color: var(--c-text-on-dark-soft); font-size: var(--fs-small); max-width: 280px; }
 .footer-col h4 { font-size: var(--fs-caption); text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-text-on-dark-soft); margin-bottom: var(--sp-4); }
 .footer-col ul { display: flex; flex-direction: column; gap: var(--sp-3); }
