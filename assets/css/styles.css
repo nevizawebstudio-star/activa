@@ -814,6 +814,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   flex: 1;
 }
 .empresas-metric-grid.five .empresas-metric:last-child { grid-column: 1 / -1; }
+.empresas-card-note { margin-top: var(--sp-6); text-align: right; font-size: var(--fs-caption); color: var(--c-text-on-dark-soft); }
 .empresas-metric b { font-size: 2.5rem; font-weight: 800; display: block; }
 .empresas-metric span { font-size: var(--fs-small); color: var(--c-text-on-dark-soft); }
 .dashboard-preview .empresas-metric span { color: var(--c-text-soft); }
