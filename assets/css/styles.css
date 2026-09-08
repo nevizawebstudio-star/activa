@@ -836,7 +836,7 @@ h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--c-text); }
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 .plan-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-.plan-example-note { display: block; font-size: var(--fs-caption); color: var(--c-text-soft); margin-bottom: var(--sp-3); }
+.plan-example-note { display: block; font-size: var(--fs-caption); color: var(--c-text-soft); margin: 0 0 var(--sp-4); }
 .plan-card.featured {
   background: var(--c-carbon-2);
   color: var(--c-white);
